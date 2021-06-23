@@ -38,8 +38,9 @@ public class BanCommand extends AbstractCommand {
             event.getChannel().sendMessage("I am missing permissions to ban that member").queue();
             return;
         }
+
         String[] split = msg.getContentRaw().split(" ");
-        String reason = split.length >= 3 ? Arrays.toString(Arrays.copyOfRange(split, 3, split.length)) : null;
+        String reason = split.length >= 3 ? String.join(" ", Arrays.copyOfRange(split, 3, split.length)) : null;
 
         event.getGuild()
                 .ban(target, 0, "hi")
