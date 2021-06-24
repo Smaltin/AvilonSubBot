@@ -39,7 +39,8 @@ public class Main extends ListenerAdapter {
      */
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class);
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class);
+        //TODO add help and eject commands
         for (Class<? extends AbstractCommand> s : classes) {
             try {
                 if (Modifier.isAbstract(s.getModifiers())) {
@@ -91,6 +92,10 @@ public class Main extends ListenerAdapter {
             return;
 
         Message msg = message.getMessage();
+
+        if (!(msg.getContentRaw().length() > 0)){
+            return;
+        }
 
         if (msg.getContentRaw().charAt(0) == '+' && getCommand(msg.getContentRaw()) != null) {
             System.out.println("Recieved Message: " + message.getMessage().getContentRaw());
