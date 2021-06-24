@@ -163,3 +163,6 @@ gradle-app.setting
 .settings/
 bin/
 imgui.ini
+
+# extra stuff
+*.env

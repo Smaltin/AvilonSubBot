@@ -7,17 +7,19 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.Nullable;
 
 import javax.security.auth.login.LoginException;
+import java.io.FileInputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Properties;
 
 public class Main extends ListenerAdapter {
     public static final long CHANNEL_ID = Long.parseLong("855948494950498324");
-    public static final String BOTKEY = System.getenv("BOTKEY");
-    public static final String YOUTUBE_CHANNEL = System.getenv("YOUTUBE_CHANNEL");
-    public static final String YOUTUBE_API_KEY = System.getenv("YOUTUBE_API_KEY");
+    public static final String BOTKEY = getEnv("BOTKEY");
+    public static final String YOUTUBE_CHANNEL = getEnv("YOUTUBE_CHANNEL");
+    public static final String YOUTUBE_API_KEY = getEnv("YOUTUBE_API_KEY");
     public static final String API_ENDPOINT = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + YOUTUBE_CHANNEL + "&key=" + YOUTUBE_API_KEY;
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
@@ -78,6 +80,17 @@ public class Main extends ListenerAdapter {
         return null;
     }
 
+    public static String getEnv(String key) {
+        try {
+            Properties loadProps = new Properties();
+            loadProps.load(new FileInputStream("settings.env"));
+            return loadProps.getProperty(key);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "No, you're bad.";
+        }
+    }
+
     /**
      * Called by {@link JDA} when a new message is sent and visible to the discord bot
      *
@@ -93,7 +106,7 @@ public class Main extends ListenerAdapter {
 
         Message msg = message.getMessage();
 
-        if (!(msg.getContentRaw().length() > 0)){
+        if (!(msg.getContentRaw().length() > 0)) {
             return;
         }
 
