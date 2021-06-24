@@ -1,19 +1,22 @@
 
 |[File](https://github.com/Smaltin/AvilonSubBot/tree/master/statistics%2Fjava%2Fname_ascending.md%2F)|[Lines (% total)](https://github.com/Smaltin/AvilonSubBot/tree/master/statistics%2Fjava%2Flines_descending.md%2F)|[Code Lines](https://github.com/Smaltin/AvilonSubBot/tree/master/statistics%2Fjava%2Fcode_ascending.md%2F)|[% Code](https://github.com/Smaltin/AvilonSubBot/tree/master/statistics%2Fjava%2Fproportion_code_descending.md%2F)|[Comment Lines](https://github.com/Smaltin/AvilonSubBot/tree/master/statistics%2Fjava%2Fcomments_descending.md%2F)|[% Comment](https://github.com/Smaltin/AvilonSubBot/tree/master/statistics%2Fjava%2Fproportion_comments_descending.md%2F)|[Blank Lines](https://github.com/Smaltin/AvilonSubBot/tree/master/statistics%2Fjava%2Fblanks_descending.md%2F)|[% Blank](https://github.com/Smaltin/AvilonSubBot/tree/master/statistics%2Fjava%2Fproportion_blanks_descending.md%2F)|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|[Main.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FMain.java)|103 (16.7%)|77|74.8%|18|17.5%|8|7.8%|
-|[Methods.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FMethods.java)|54 (8.8%)|49|90.7%|0|0.0%|5|9.3%|
-|[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FPingCommand.java)|55 (8.9%)|46|83.6%|5|9.1%|4|7.3%|
-|[BanCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FBanCommand.java)|53 (8.6%)|42|79.2%|0|0.0%|11|20.8%|
-|[KickCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FKickCommand.java)|51 (8.3%)|42|82.4%|0|0.0%|9|17.6%|
-|[HugCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FHugCommand.java)|44 (7.2%)|36|81.8%|0|0.0%|8|18.2%|
-|[KissCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FKissCommand.java)|44 (7.2%)|36|81.8%|0|0.0%|8|18.2%|
-|[HowPogCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FHowPogCommand.java)|38 (6.2%)|32|84.2%|0|0.0%|6|15.8%|
-|[PatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FPatCommand.java)|39 (6.3%)|32|82.1%|0|0.0%|7|17.9%|
-|[AviTimeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FAviTimeCommand.java)|33 (5.4%)|26|78.8%|0|0.0%|7|21.2%|
-|[MemeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FMemeCommand.java)|32 (5.2%)|25|78.1%|0|0.0%|7|21.9%|
-|[SubCount.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FSubCount.java)|26 (4.2%)|24|92.3%|0|0.0%|2|7.7%|
-|[HelpCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FHelpCommand.java)|17 (2.8%)|13|76.5%|0|0.0%|4|23.5%|
-|[AbstractCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FAbstractCommand.java)|26 (4.2%)|11|42.3%|10|38.5%|5|19.2%|
-|Average |43.9|35.1|X|2.4|X|6.5|X|
-|Total (14)|615|491|79.8%|33| 5.4%|91|14.8%|
+|[Main.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FMain.java)|108 (14.6%)|80|74.1%|19|17.6%|9|8.3%|
+|[Methods.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FMethods.java)|54 (7.3%)|49|90.7%|0|0.0%|5|9.3%|
+|[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FPingCommand.java)|55 (7.5%)|46|83.6%|5|9.1%|4|7.3%|
+|[VerifyCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FVerifyCommand.java)|53 (7.2%)|44|83.0%|0|0.0%|9|17.0%|
+|[BanCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FBanCommand.java)|53 (7.2%)|42|79.2%|0|0.0%|11|20.8%|
+|[KickCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FKickCommand.java)|51 (6.9%)|42|82.4%|0|0.0%|9|17.6%|
+|[HugCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FHugCommand.java)|44 (6.0%)|36|81.8%|0|0.0%|8|18.2%|
+|[KissCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FKissCommand.java)|44 (6.0%)|36|81.8%|0|0.0%|8|18.2%|
+|[HowPogCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FHowPogCommand.java)|39 (5.3%)|32|82.1%|0|0.0%|7|17.9%|
+|[PatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FPatCommand.java)|39 (5.3%)|32|82.1%|0|0.0%|7|17.9%|
+|[CatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FCatCommand.java)|36 (4.9%)|28|77.8%|0|0.0%|8|22.2%|
+|[AviTimeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FAviTimeCommand.java)|33 (4.5%)|26|78.8%|0|0.0%|7|21.2%|
+|[PaciCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FPaciCommand.java)|29 (3.9%)|25|86.2%|0|0.0%|4|13.8%|
+|[MemeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FMemeCommand.java)|31 (4.2%)|24|77.4%|0|0.0%|7|22.6%|
+|[SubCount.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FSubCount.java)|26 (3.5%)|24|92.3%|0|0.0%|2|7.7%|
+|[HelpCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FHelpCommand.java)|17 (2.3%)|13|76.5%|0|0.0%|4|23.5%|
+|[AbstractCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2FCommands%2FAbstractCommand.java)|26 (3.5%)|11|42.3%|10|38.5%|5|19.2%|
+|Average |43.4|34.7|X|2.0|X|6.7|X|
+|Total (17)|738|590|79.9%|34| 4.6%|114|15.4%|

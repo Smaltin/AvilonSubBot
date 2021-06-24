@@ -2,15 +2,18 @@ File,Lines (% total),Code Lines,% Code,Comment Lines,% Comment,Blank Lines,% Bla
 AbstractCommand.java,26 (100.0%),11,42.3%,10,38.5%,5,19.2%
 AviTimeCommand.java,33 (55.9%),26,78.8%,0,0.0%,7,21.2%
 BanCommand.java,53 (47.3%),42,79.2%,0,0.0%,11,20.8%
-HelpCommand.java,17 (13.2%),13,76.5%,0,0.0%,4,23.5%
-HowPogCommand.java,38 (22.8%),32,84.2%,0,0.0%,6,15.8%
-HugCommand.java,44 (20.9%),36,81.8%,0,0.0%,8,18.2%
-KickCommand.java,51 (19.5%),42,82.4%,0,0.0%,9,17.6%
-KissCommand.java,44 (14.4%),36,81.8%,0,0.0%,8,18.2%
-MemeCommand.java,32 (9.5%),25,78.1%,0,0.0%,7,21.9%
-PatCommand.java,39 (10.3%),32,82.1%,0,0.0%,7,17.9%
-PingCommand.java,55 (12.7%),46,83.6%,5,9.1%,4,7.3%
-Main.java,103 (19.3%),77,74.8%,18,17.5%,8,7.8%
-Methods.java,54 (9.2%),49,90.7%,0,0.0%,5,9.3%
-SubCount.java,26 (4.2%),24,92.3%,0,0.0%,2,7.7%
-Total,615,491,0.8,33,0.1,91,0.1
+CatCommand.java,36 (24.3%),28,77.8%,0,0.0%,8,22.2%
+HelpCommand.java,17 (10.3%),13,76.5%,0,0.0%,4,23.5%
+HowPogCommand.java,39 (19.1%),32,82.1%,0,0.0%,7,17.9%
+HugCommand.java,44 (17.7%),36,81.8%,0,0.0%,8,18.2%
+KickCommand.java,51 (17.1%),42,82.4%,0,0.0%,9,17.6%
+KissCommand.java,44 (12.8%),36,81.8%,0,0.0%,8,18.2%
+MemeCommand.java,31 (8.3%),24,77.4%,0,0.0%,7,22.6%
+PaciCommand.java,29 (7.2%),25,86.2%,0,0.0%,4,13.8%
+PatCommand.java,39 (8.8%),32,82.1%,0,0.0%,7,17.9%
+PingCommand.java,55 (11.1%),46,83.6%,5,9.1%,4,7.3%
+VerifyCommand.java,53 (9.6%),44,83.0%,0,0.0%,9,17.0%
+Main.java,108 (16.4%),80,74.1%,19,17.6%,9,8.3%
+Methods.java,54 (7.6%),49,90.7%,0,0.0%,5,9.3%
+SubCount.java,26 (3.5%),24,92.3%,0,0.0%,2,7.7%
+Total,738,590,0.8,34,0.0,114,0.2
