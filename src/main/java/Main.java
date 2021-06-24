@@ -39,7 +39,7 @@ public class Main extends ListenerAdapter {
      */
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class);
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class);
         for (Class<? extends AbstractCommand> s : classes) {
             try {
                 if (Modifier.isAbstract(s.getModifiers())) {
