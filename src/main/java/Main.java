@@ -26,6 +26,8 @@ public class Main extends ListenerAdapter {
     public static JDA holder;
     public static String postedSubCt;
 
+    public static String prefix = "+";
+
     public static void main(String[] args) throws LoginException, InterruptedException {
         holder = JDABuilder.createDefault(BOTKEY).addEventListeners(new Main()).build();
         holder.awaitReady();
@@ -72,7 +74,7 @@ public class Main extends ListenerAdapter {
      */
     @Nullable
     public static AbstractCommand getCommand(String message) {
-        message = message.replace("+", "").split(" ")[0];
+        message = message.replace(prefix, "").split(" ")[0];
         if (commands.containsKey(message))
             return commands.get(message);
         if (commandsAlias.containsKey(message))
@@ -110,7 +112,7 @@ public class Main extends ListenerAdapter {
             return;
         }
 
-        if (msg.getContentRaw().charAt(0) == '+' && getCommand(msg.getContentRaw()) != null) {
+        if (msg.getContentRaw().startsWith(prefix) && getCommand(msg.getContentRaw()) != null) {
             System.out.println("Recieved Message: " + message.getMessage().getContentRaw());
             AbstractCommand command = getCommand(message.getMessage().getContentRaw());
             if (command == null)
