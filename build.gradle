@@ -8,7 +8,6 @@ mainClassName = "Main"
 sourceCompatibility = 1.8
 
 group 'com.github.smaltin'
-version '0.0.1'
 
 
 repositories {

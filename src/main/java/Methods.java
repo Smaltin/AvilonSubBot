@@ -47,7 +47,7 @@ public class Methods {
             JsonObject rootItems = rootObj.getAsJsonArray("items").get(0).getAsJsonObject().getAsJsonObject("statistics");
             return rootItems.get("subscriberCount").getAsString();
         } else {
-            System.out.println("GET request not worked");
+            System.out.println("GET request failed. You should GET better.");
             return "ERR_1";
         }
     }
