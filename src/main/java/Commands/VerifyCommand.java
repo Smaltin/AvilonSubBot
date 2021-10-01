@@ -62,7 +62,7 @@ public class VerifyCommand extends AbstractCommand {
     public static String getEnv(String key) {
         try {
             Properties loadProps = new Properties();
-            loadProps.load(new FileInputStream("settings.env"));
+            loadProps.load(new FileInputStream((DEVELOPER_MODE ? "dev-" : "") + "settings.env"));
             return loadProps.getProperty(key);
         } catch (Exception e) {
             e.printStackTrace();

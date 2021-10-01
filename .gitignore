@@ -141,6 +141,7 @@ $RECYCLE.BIN/
 /build/generated/
 /build/libs/
 /build/tmp/
+/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting

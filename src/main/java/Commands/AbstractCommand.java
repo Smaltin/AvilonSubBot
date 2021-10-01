@@ -6,6 +6,8 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public abstract class AbstractCommand {
 
+    public static final boolean DEVELOPER_MODE = true;
+
     /**
      * The name of the command that the user will use to reference it
      *
