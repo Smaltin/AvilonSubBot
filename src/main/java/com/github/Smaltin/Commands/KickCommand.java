@@ -1,4 +1,4 @@
-package Commands;
+package com.github.Smaltin.Commands;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.Permission;
@@ -9,18 +9,17 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Arrays;
 
-public class BanCommand extends AbstractCommand {
+public class KickCommand extends AbstractCommand {
 
     @Override
     public String getCommand() {
-        return "ban";
+        return "kick";
     }
 
     @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         Guild guild = msg.getGuild();
         Member author = msg.getMember();
-        assert author != null;
         Member bot = guild.getSelfMember();
 
         if (event.getMessage().getMentionedMembers().isEmpty()) {
@@ -28,26 +27,25 @@ public class BanCommand extends AbstractCommand {
         }
 
         Member target = msg.getMentionedMembers().get(0);
-
-        if (!author.canInteract(target) || !author.hasPermission(Permission.BAN_MEMBERS)) {
-            event.getChannel().sendMessage("You are missing permission to ban this member").queue();
+        assert author != null;
+        if (!author.canInteract(target) || !author.hasPermission(Permission.KICK_MEMBERS)) {
+            event.getChannel().sendMessage("You are missing permission to kick this member").queue();
             return;
         }
 
-        if (!bot.canInteract(target) || !bot.hasPermission(Permission.BAN_MEMBERS)) {
-            event.getChannel().sendMessage("I am missing permissions to ban that member").queue();
+        if (!bot.canInteract(target) || !bot.hasPermission(Permission.KICK_MEMBERS)) {
+            event.getChannel().sendMessage("I am missing permissions to kick that member").queue();
             return;
         }
-
         String[] split = msg.getContentRaw().split(" ");
         String reason = split.length >= 3 ? String.join(" ", Arrays.copyOfRange(split, 3, split.length)) : null;
 
         event.getGuild()
-                .ban(target, 0, "hi")
+                .kick(target, "hi")
                 .reason(reason)
                 .queue(
-                        (__) -> event.getChannel().sendMessage("Ban was successful").queue(),
-                        (error) -> event.getChannel().sendMessageFormat("Could not ban %s", error.getMessage()).queue()
+                        (__) -> event.getChannel().sendMessage("Kick was successful").queue(),
+                        (error) -> event.getChannel().sendMessageFormat("Could not kick %s", error.getMessage()).queue()
                 );
     }
 }

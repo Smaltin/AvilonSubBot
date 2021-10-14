@@ -1,4 +1,4 @@
-package Commands;
+package com.github.Smaltin.Commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -9,14 +9,19 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import java.awt.*;
 import java.util.Random;
 
-public class PatCommand extends AbstractCommand {
+public class HugCommand extends AbstractCommand {
 
-    private static final String[] patImages = new String[]{"https://media.giphy.com/media/ARSp9T7wwxNcs/giphy.gif", "https://media.tenor.com/images/a671268253717ff877474fd019ef73e9/tenor.gif", "https://media.tenor.com/images/1f884a2d953bcb2ce32b02e435bea8d7/tenor.gif", "https://media.tenor.com/images/943a52d38d896bda734a6396b1ffca89/tenor.gif", "https://media.tenor.com/images/aa9cb58fc4dab5e1c6b9519009c4ada1/tenor.gif"};
+    private static final String[] hugImages = new String[]{"https://cdn.weeb.sh/images/Sk-xxs3C-.gif", "https://cdn.weeb.sh/images/ryjJFdmvb.gif", "https://cdn.weeb.sh/images/HJ7lY_QwW.gif", "https://cdn.weeb.sh/images/rkx1dJ25z.gif", "https://cdn.weeb.sh/images/rJ_slRYFZ.gif", "https://cdn.weeb.sh/images/rkIK_u7Pb.gif", "https://cdn.weeb.sh/images/r1kC_dQPW.gif", "https://cdn.weeb.sh/images/Hyec_OmDW.gif", "https://cdn.weeb.sh/images/HytoudXwW.gif", "https://cdn.weeb.sh/images/Hk0yFumwW.gif"};
     private final Random random = new Random(System.currentTimeMillis());
 
     @Override
     public String getCommand() {
-        return "pat";
+        return "hug";
+    }
+
+    @Override
+    public String[] getAliases() {
+        return new String[]{"huggy"};
     }
 
     @Override
@@ -33,7 +38,7 @@ public class PatCommand extends AbstractCommand {
             mentionedUserPing = target.getEffectiveName();
         }
 
-        builder.setImage(patImages[random.nextInt(patImages.length)]).setColor(Color.decode("#FF0000")).setDescription("**" + authorPing + "** patted **" + mentionedUserPing + "**");
+        builder.setImage(hugImages[random.nextInt(hugImages.length)]).setColor(Color.decode("#FF0000")).setDescription("\uD83E\uDD17 **" + authorPing + "** huggy **" + mentionedUserPing + "** \uD83E\uDD17");
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
     }
 }

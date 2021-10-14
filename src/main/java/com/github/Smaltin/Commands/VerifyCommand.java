@@ -1,4 +1,4 @@
-package Commands;
+package com.github.Smaltin.Commands;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
@@ -6,21 +6,17 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+import static com.github.Smaltin.Main.*;
 
 public class VerifyCommand extends AbstractCommand {
 
     private static final String[] joinMessages = new String[]{" just joined. Can I get a heal?", " is here. Welcome!", " we hope you brought pizza.", " leave your weapons by the door.", " appeared. Welcome!", " showed up!", " just arrived, wellcum!"};
     private final Random random = new Random(System.currentTimeMillis());
-    public static final String VERIFY_CHANNEL_ID = getEnv("VERIFY_CHANNEL_ID");
-    public static final String VERIFY_PASSWORD = getEnv("VERIFY_PASSWORD");
-    public static final String VERIFY_REMOVE_ROLE_ID = getEnv("VERIFY_REMOVE_ROLE_ID");
-    public static final String VERIFY_GENERAL_CHANNEL_ID = getEnv("VERIFY_GENERAL_CHANNEL_ID");
 
     @Override
     public String getCommand() {
@@ -50,23 +46,6 @@ public class VerifyCommand extends AbstractCommand {
                     System.out.println("Message failed: " + Arrays.toString(failure.getStackTrace()));
                 });
             }
-        }
-    }
-
-    /**
-     * Enters into the settings.env file and pulls out the value you set
-     *
-     * @param key The key to check under
-     * @return the string value from the key
-     */
-    public static String getEnv(String key) {
-        try {
-            Properties loadProps = new Properties();
-            loadProps.load(new FileInputStream((DEVELOPER_MODE ? "dev-" : "") + "settings.env"));
-            return loadProps.getProperty(key);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "No, you're bad.";
         }
     }
 }

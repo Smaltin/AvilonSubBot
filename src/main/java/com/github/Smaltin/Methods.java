@@ -1,3 +1,5 @@
+package com.github.Smaltin;
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.dv8tion.jda.api.entities.GuildChannel;

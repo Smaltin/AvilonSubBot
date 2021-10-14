@@ -1,4 +1,4 @@
-package Commands;
+package com.github.Smaltin.Commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
