@@ -1,19 +1,19 @@
 File,Lines (% total),Code Lines,% Code,Comment Lines,% Comment,Blank Lines,% Blank
-AbstractCommand.java,28 (100.0%),12,42.9%,10,35.7%,6,21.4%
-AviTimeCommand.java,33 (54.1%),26,78.8%,0,0.0%,7,21.2%
-BanCommand.java,53 (46.5%),42,79.2%,0,0.0%,11,20.8%
-CatCommand.java,36 (24.0%),28,77.8%,0,0.0%,8,22.2%
-HelpCommand.java,17 (10.2%),13,76.5%,0,0.0%,4,23.5%
-HowPogCommand.java,39 (18.9%),32,82.1%,0,0.0%,7,17.9%
-HugCommand.java,44 (17.6%),36,81.8%,0,0.0%,8,18.2%
-KickCommand.java,51 (16.9%),42,82.4%,0,0.0%,9,17.6%
-KissCommand.java,44 (12.8%),36,81.8%,0,0.0%,8,18.2%
-MemeCommand.java,31 (8.2%),24,77.4%,0,0.0%,7,22.6%
-PaciCommand.java,29 (7.2%),25,86.2%,0,0.0%,4,13.8%
-PatCommand.java,39 (8.8%),32,82.1%,0,0.0%,7,17.9%
-PingCommand.java,55 (11.0%),46,83.6%,5,9.1%,4,7.3%
-VerifyCommand.java,51 (9.3%),43,84.3%,0,0.0%,8,15.7%
-Main.java,163 (22.9%),118,72.4%,33,20.2%,12,7.4%
-Methods.java,56 (7.3%),50,89.3%,0,0.0%,6,10.7%
-SubCount.java,30 (3.8%),27,90.0%,0,0.0%,3,10.0%
-Total,799,632,0.8,48,0.1,119,0.1
+AbstractCommand.java,40 (100.0%),13,32.5%,20,50.0%,7,17.5%
+AviTimeCommand.java,42 (51.2%),34,81.0%,0,0.0%,8,19.0%
+BanCommand.java,63 (43.4%),50,79.4%,0,0.0%,13,20.6%
+CatCommand.java,46 (24.1%),36,78.3%,0,0.0%,10,21.7%
+HelpCommand.java,45 (19.1%),36,80.0%,3,6.7%,6,13.3%
+HowPogCommand.java,49 (17.2%),40,81.6%,0,0.0%,9,18.4%
+HugCommand.java,54 (15.9%),44,81.5%,0,0.0%,10,18.5%
+KickCommand.java,61 (15.3%),50,82.0%,0,0.0%,11,18.0%
+KissCommand.java,54 (11.9%),44,81.5%,0,0.0%,10,18.5%
+MemeCommand.java,41 (8.3%),32,78.0%,0,0.0%,9,22.0%
+PaciCommand.java,39 (7.3%),33,84.6%,0,0.0%,6,15.4%
+PatCommand.java,49 (8.4%),40,81.6%,0,0.0%,9,18.4%
+PingCommand.java,65 (10.0%),54,83.1%,5,7.7%,6,9.2%
+VerifyCommand.java,57 (8.1%),47,82.5%,0,0.0%,10,17.5%
+Main.java,163 (18.8%),118,72.4%,33,20.2%,12,7.4%
+Methods.java,56 (6.1%),50,89.3%,0,0.0%,6,10.7%
+SubCount.java,29 (3.0%),26,89.7%,0,0.0%,3,10.3%
+Total,953,747,0.8,61,0.1,145,0.2
