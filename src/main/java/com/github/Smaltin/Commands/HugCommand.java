@@ -20,8 +20,13 @@ public class HugCommand extends AbstractCommand {
     }
 
     @Override
-    public String[] getAliases() {
-        return new String[]{"huggy"};
+    public String getArgs() {
+        return "(Optional) <@Mention>";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Sends a hugging gif";
     }
 
     @Override
@@ -40,5 +45,10 @@ public class HugCommand extends AbstractCommand {
 
         builder.setImage(hugImages[random.nextInt(hugImages.length)]).setColor(Color.decode("#FF0000")).setDescription("\uD83E\uDD17 **" + authorPing + "** huggy **" + mentionedUserPing + "** \uD83E\uDD17");
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
+    }
+
+    @Override
+    public String[] getAliases() {
+        return new String[]{"huggy"};
     }
 }

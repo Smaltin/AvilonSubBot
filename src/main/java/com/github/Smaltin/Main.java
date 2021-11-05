@@ -26,8 +26,8 @@ public class Main extends ListenerAdapter {
     public static final String BOTKEY = getEnv("BOTKEY");
     public static final String YOUTUBE_CHANNEL = getEnv("YOUTUBE_CHANNEL");
     public static final String YOUTUBE_API_KEY = getEnv("YOUTUBE_API_KEY");
-    public static final String SUBSCRIBER_NAME = getEnv("SUBSCRIBER_NAME");
     public static final String API_ENDPOINT = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + YOUTUBE_CHANNEL + "&key=" + YOUTUBE_API_KEY;
+    public static final String SUBSCRIBER_NAME = getEnv("SUBSCRIBER_NAME");
     public static final String VERIFY_CHANNEL_ID = getEnv("VERIFY_CHANNEL_ID");
     public static final String VERIFY_PASSWORD = getEnv("VERIFY_PASSWORD");
     public static final String VERIFY_REMOVE_ROLE_ID = getEnv("VERIFY_REMOVE_ROLE_ID");
@@ -46,7 +46,7 @@ public class Main extends ListenerAdapter {
         holder = JDABuilder.createDefault(BOTKEY).addEventListeners(new Main()).build();
         holder.awaitReady();
         loadCommands();
-        holder.getPresence().setActivity(Activity.listening("Avilon's com.github.Smaltin.Music"));
+        holder.getPresence().setActivity(Activity.listening("Avilon's Music"));
         SubCount thread = new SubCount();
         thread.start();
     }
@@ -59,7 +59,7 @@ public class Main extends ListenerAdapter {
      */
     public static boolean isInternetWorking() {
         try {
-            URL url = new URL("http://www.google.com");
+            URL url = new URL("https://www.google.com");
             URLConnection connection = url.openConnection();
             connection.connect();
             //System.out.println("Internet is connected");
@@ -77,7 +77,7 @@ public class Main extends ListenerAdapter {
      */
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class);
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class);
         //TODO add help and eject commands
         for (Class<? extends AbstractCommand> s : classes) {
             try {

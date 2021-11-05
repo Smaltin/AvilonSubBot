@@ -20,6 +20,16 @@ public class PatCommand extends AbstractCommand {
     }
 
     @Override
+    public String getArgs() {
+        return "(Optional) <@Mention>";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Sends a patting gif";
+    }
+
+    @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         EmbedBuilder builder = new EmbedBuilder();
         String mentionedUserPing;

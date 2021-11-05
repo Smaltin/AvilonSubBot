@@ -20,8 +20,13 @@ public class CatCommand extends AbstractCommand {
     }
 
     @Override
-    public String[] getAliases() {
-        return new String[]{"givecat", "randomcat", "rcat"};
+    public String getArgs() {
+        return null;
+    }
+
+    @Override
+    public String getDescription() {
+        return "Replies with a random photo of a cat";
     }
 
     @Override
@@ -32,5 +37,10 @@ public class CatCommand extends AbstractCommand {
 
         builder.setImage(catImages[random.nextInt(catImages.length)]).setColor(Color.decode("#ffd1dc")).setDescription("Meow Meow").setTitle("Cat Machine");
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
+    }
+
+    @Override
+    public String[] getAliases() {
+        return new String[]{"givecat", "randomcat", "rcat"};
     }
 }

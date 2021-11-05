@@ -18,8 +18,13 @@ public class MemeCommand extends AbstractCommand {
     }
 
     @Override
-    public String[] getAliases() {
-        return new String[]{"givememe", "meme", "randommeme", "rmeme"};
+    public String getArgs() {
+        return null;
+    }
+
+    @Override
+    public String getDescription() {
+        return "Sends a random meme";
     }
 
     @Override
@@ -27,5 +32,10 @@ public class MemeCommand extends AbstractCommand {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setImage("https://api.cool-img-api.ml/meme?randomize=" + random.nextInt(99999999)).setColor(Color.decode("#ff0000"));
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
+    }
+
+    @Override
+    public String[] getAliases() {
+        return new String[]{"givememe", "meme", "randommeme", "rmeme"};
     }
 }

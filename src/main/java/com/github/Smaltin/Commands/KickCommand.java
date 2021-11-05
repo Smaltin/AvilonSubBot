@@ -17,6 +17,16 @@ public class KickCommand extends AbstractCommand {
     }
 
     @Override
+    public String getArgs() {
+        return "<@Mention> <Reason>";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Kicks the mentioned user with the reason provided";
+    }
+
+    @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         Guild guild = msg.getGuild();
         Member author = msg.getMember();

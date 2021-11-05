@@ -23,6 +23,16 @@ public class PingCommand extends AbstractCommand {
     }
 
     @Override
+    public String getArgs() {
+        return "(Optional) fancy";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Checks the ping of the bot. If fancy is passed then it changes the appearance of the ping but isn't necessary";
+    }
+
+    @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         String[] args = msg.getContentRaw().split(" ");
         if (args.length > 1 && args[1].matches("fancy")) {

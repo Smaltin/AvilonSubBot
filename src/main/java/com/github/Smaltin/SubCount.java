@@ -1,6 +1,5 @@
 package com.github.Smaltin;
 
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.time.Instant;
@@ -22,7 +21,7 @@ public class SubCount extends Thread {
                     System.out.println(Timestamp.from(Instant.now()) + "[No Change] " + myFormatter.format(subsLong) + " " + Main.SUBSCRIBER_NAME);
                 }
                 Thread.sleep(60000);
-            } catch (InterruptedException | IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

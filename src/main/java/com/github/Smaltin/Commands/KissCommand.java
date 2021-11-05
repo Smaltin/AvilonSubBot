@@ -20,8 +20,13 @@ public class KissCommand extends AbstractCommand {
     }
 
     @Override
-    public String[] getAliases() {
-        return new String[]{"kissy"};
+    public String getArgs() {
+        return "(Optional) <@Mention>";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Sends a kissing gif";
     }
 
     @Override
@@ -40,5 +45,10 @@ public class KissCommand extends AbstractCommand {
 
         builder.setImage(kissImages[random.nextInt(kissImages.length)]).setColor(Color.decode("#FF0000")).setDescription(":kissing_heart: **" + authorPing + "** kissy **" + mentionedUserPing + "** :kissing_heart:");
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
+    }
+
+    @Override
+    public String[] getAliases() {
+        return new String[]{"kissy"};
     }
 }

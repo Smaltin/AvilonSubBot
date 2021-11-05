@@ -20,6 +20,16 @@ public class HowPogCommand extends AbstractCommand {
     }
 
     @Override
+    public String getArgs() {
+        return "<@Mention OR String>";
+    }
+
+    @Override
+    public String getDescription() {
+        return "How poggers is the thing you're inputting? Who knows. (Rhetorical. I do.)";
+    }
+
+    @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         EmbedBuilder builder = new EmbedBuilder();
 

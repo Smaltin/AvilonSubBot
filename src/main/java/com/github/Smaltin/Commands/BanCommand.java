@@ -17,6 +17,16 @@ public class BanCommand extends AbstractCommand {
     }
 
     @Override
+    public String getArgs() {
+        return "<@Mention> <Reason>";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Bans the mentioned user with the provided reason";
+    }
+
+    @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         Guild guild = msg.getGuild();
         Member author = msg.getMember();

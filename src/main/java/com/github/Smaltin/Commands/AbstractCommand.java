@@ -6,14 +6,28 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public abstract class AbstractCommand {
 
-    public static final boolean DEVELOPER_MODE = true;
-
     /**
      * The name of the command that the user will use to reference it
      *
      * @return The command name without the prefix
      */
     public abstract String getCommand();
+
+    /**
+     * The arguments the command may require
+     *
+     * @return The arguments (ex: <user>)
+     */
+    public abstract String getArgs();
+
+    /**
+     * I wonder what this command does?
+     *
+     * @return A brief description of the command and what it does
+     */
+    public abstract String getDescription();
+
+    public abstract void runCommand(JDA client, MessageReceivedEvent event, Message msg);
 
     /**
      * Returns secondary names that will be accepted if the user calls this command
@@ -23,6 +37,4 @@ public abstract class AbstractCommand {
     public String[] getAliases() {
         return new String[0];
     }
-
-    public abstract void runCommand(JDA client, MessageReceivedEvent event, Message msg);
 }

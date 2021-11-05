@@ -13,10 +13,19 @@ import java.util.TimeZone;
 
 public class AviTimeCommand extends AbstractCommand {
 
-
     @Override
     public String getCommand() {
         return "avitime";
+    }
+
+    @Override
+    public String getArgs() {
+        return null;
+    }
+
+    @Override
+    public String getDescription() {
+        return "Displays Avilon's time in hr:min:sec format";
     }
 
     @Override

@@ -17,6 +17,16 @@ public class PaciCommand extends AbstractCommand {
     }
 
     @Override
+    public String getArgs() {
+        return "<@Mention>";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Sends the mentioned user a pacifier image";
+    }
+
+    @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         if (!event.getMessage().getMentionedMembers().isEmpty()) {
             EmbedBuilder builder = new EmbedBuilder();
