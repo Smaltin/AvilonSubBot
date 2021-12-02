@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import static com.github.Smaltin.Main.*;
+import static com.github.Smaltin.Configuration.*;
 
 public class VerifyCommand extends AbstractCommand {
 

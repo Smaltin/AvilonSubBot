@@ -32,7 +32,7 @@ public class HelpCommand extends AbstractCommand {
                 send = new StringBuilder();
             }
             AbstractCommand command = (AbstractCommand) Main.commands.values().toArray()[i];
-            send.append("`").append(Main.getEnv("PREFIX") + command.getCommand()).append(" ").append(command.getArgs() == null ? "" : command.getArgs()).append("` - ").append(command.getDescription()).append("\n");
+            send.append("`").append(Main.getEnv("PREFIX")).append(command.getCommand()).append(" ").append(command.getArgs() == null ? "" : command.getArgs()).append("` - ").append(command.getDescription()).append("\n");
         }
         msg.getChannel().sendMessage(send).submit();
         //System.out.println(send);

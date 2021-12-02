@@ -20,18 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
+import static com.github.Smaltin.Configuration.BOTKEY;
+import static com.github.Smaltin.Configuration.DEVELOPER_MODE;
+
 public class Main extends ListenerAdapter {
-    public static final boolean DEVELOPER_MODE = true;
-    public static final long CHANNEL_ID = Long.parseLong(getEnv("SUBCT_CHANNEL_ID"));
-    public static final String BOTKEY = getEnv("BOTKEY");
-    public static final String YOUTUBE_CHANNEL = getEnv("YOUTUBE_CHANNEL");
-    public static final String YOUTUBE_API_KEY = getEnv("YOUTUBE_API_KEY");
-    public static final String API_ENDPOINT = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + YOUTUBE_CHANNEL + "&key=" + YOUTUBE_API_KEY;
-    public static final String SUBSCRIBER_NAME = getEnv("SUBSCRIBER_NAME");
-    public static final String VERIFY_CHANNEL_ID = getEnv("VERIFY_CHANNEL_ID");
-    public static final String VERIFY_PASSWORD = getEnv("VERIFY_PASSWORD");
-    public static final String VERIFY_REMOVE_ROLE_ID = getEnv("VERIFY_REMOVE_ROLE_ID");
-    public static final String VERIFY_GENERAL_CHANNEL_ID = getEnv("VERIFY_GENERAL_CHANNEL_ID");
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
     public static final String PREFIX = getEnv("PREFIX");
@@ -47,7 +39,7 @@ public class Main extends ListenerAdapter {
         holder.awaitReady();
         loadCommands();
         holder.getPresence().setActivity(Activity.listening("Avilon's Music"));
-        SubCount thread = new SubCount();
+        SubCountRenamer.SubCounter thread = new SubCountRenamer.SubCounter();
         thread.start();
     }
 

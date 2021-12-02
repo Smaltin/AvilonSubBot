@@ -10,8 +10,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Timestamp;
+import java.text.DecimalFormat;
+import java.time.Instant;
 
-public class Methods {
+import static com.github.Smaltin.Configuration.*;
+
+public class SubCountRenamer {
 
     public static void setChannelName(long channelId, String channelName, boolean tryAgain) throws InterruptedException {
         GuildChannel channel = Main.holder.getGuildChannelById(channelId);
@@ -30,7 +35,7 @@ public class Methods {
     }
 
     public static String getSubscriberCount() throws IOException {
-        String webRequest = Main.API_ENDPOINT;
+        String webRequest = API_ENDPOINT;
         URL url = new URL(webRequest);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestProperty("accept", "application/json");
@@ -51,6 +56,30 @@ public class Methods {
         } else {
             System.out.println("GET request failed. You should GET better.");
             return "ERR_1";
+        }
+    }
+
+    public static class SubCounter extends Thread {
+
+        @Override
+        public void run() {
+            while (true) {
+                try {
+                    String subs = getSubscriberCount();
+                    Long subsLong = Long.parseLong(subs);
+                    DecimalFormat myFormatter = new DecimalFormat("###,###");
+                    if (!subs.equals(Main.postedSubCt)) {
+                        setChannelName(CHANNEL_ID, SUBSCRIBER_NAME + ": " + myFormatter.format(subsLong), false);
+                        Main.postedSubCt = subs;
+                        System.out.println(Timestamp.from(Instant.now()) + "[Changed] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
+                    } else {
+                        System.out.println(Timestamp.from(Instant.now()) + "[No Change] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
+                    }
+                    Thread.sleep(60000);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }
