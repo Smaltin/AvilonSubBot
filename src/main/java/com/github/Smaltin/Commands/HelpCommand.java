@@ -5,6 +5,8 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
+import static com.github.Smaltin.Main.CODE_VERSION;
+
 public class HelpCommand extends AbstractCommand {
     @Override
     public String getCommand() {
@@ -24,9 +26,9 @@ public class HelpCommand extends AbstractCommand {
     @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         //System.out.println("Sending help command");
-        StringBuilder send = new StringBuilder("I know the following commands:\n\n");
+        StringBuilder send = new StringBuilder("Current Code Version: " + CODE_VERSION + "\nI know the following commands:\n\n");
         for (int i = 0; i < Main.commands.values().size(); i++) {
-            if ((i+1) % 11 == 0) {
+            if ((i + 1) % 11 == 0) {
                 msg.getChannel().sendMessage(send).submit();
                 //System.out.println(send);
                 send = new StringBuilder();

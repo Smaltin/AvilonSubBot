@@ -27,6 +27,7 @@ public class Main extends ListenerAdapter {
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
     public static final String PREFIX = getEnv("PREFIX");
+    public static final String CODE_VERSION = "0.0.1";
     public static JDA holder;
     public static String postedSubCt;
 
@@ -54,10 +55,8 @@ public class Main extends ListenerAdapter {
             URL url = new URL("https://www.google.com");
             URLConnection connection = url.openConnection();
             connection.connect();
-            //System.out.println("Internet is connected");
             return true;
         } catch (Exception e) {
-            //System.out.println("Internet is not connected");
             return false;
         }
     }
@@ -69,9 +68,8 @@ public class Main extends ListenerAdapter {
      */
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class);
-        //TODO add help and eject commands
-        for (Class<? extends AbstractCommand> s : classes) {
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class);
+        for (Class<? extends AbstractCommand> s : classes) { //TODO add "eject" and finish Sus Command
             try {
                 if (Modifier.isAbstract(s.getModifiers())) {
                     continue;
