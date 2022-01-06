@@ -8,7 +8,7 @@
 |[HugCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FHugCommand.java)|54 (4.9%)|44|81.5%|0|0.0%|10|18.5%|
 |[KissCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FKissCommand.java)|54 (4.9%)|44|81.5%|0|0.0%|10|18.5%|
 |[VerifyCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FVerifyCommand.java)|57 (5.2%)|47|82.5%|0|0.0%|10|17.5%|
-|[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FSubCountRenamer.java)|100 (9.1%)|90|90.0%|0|0.0%|10|10.0%|
+|[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FSubCountRenamer.java)|102 (9.3%)|92|90.2%|0|0.0%|10|9.8%|
 |[HowPogCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FHowPogCommand.java)|49 (4.5%)|40|81.6%|0|0.0%|9|18.4%|
 |[MemeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FMemeCommand.java)|41 (3.7%)|32|78.0%|0|0.0%|9|22.0%|
 |[PatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FPatCommand.java)|49 (4.5%)|40|81.6%|0|0.0%|9|18.4%|
@@ -20,6 +20,6 @@
 |[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FPingCommand.java)|65 (5.9%)|54|83.1%|5|7.7%|6|9.2%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FRestartCommand.java)|40 (3.7%)|29|72.5%|5|12.5%|6|15.0%|
 |[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FConfiguration.java)|35 (3.2%)|26|74.3%|6|17.1%|3|8.6%|
-|[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FUtilities.java)|14 (1.3%)|11|78.6%|1|7.1%|2|14.3%|
-|Average |54.7|42.9|X|3.5|X|8.3|X|
-|Total (20)|1094|858|78.4%|70| 6.4%|166|15.2%|
+|[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FUtilities.java)|13 (1.2%)|11|84.6%|0|0.0%|2|15.4%|
+|Average |54.8|43.0|X|3.5|X|8.3|X|
+|Total (20)|1095|860|78.5%|69| 6.3%|166|15.2%|

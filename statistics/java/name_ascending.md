@@ -17,9 +17,9 @@
 |[PatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FPatCommand.java)|49 (4.5%)|40|81.6%|0|0.0%|9|18.4%|
 |[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FPingCommand.java)|65 (5.9%)|54|83.1%|5|7.7%|6|9.2%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FRestartCommand.java)|40 (3.7%)|29|72.5%|5|12.5%|6|15.0%|
-|[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FSubCountRenamer.java)|100 (9.1%)|90|90.0%|0|0.0%|10|10.0%|
+|[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FSubCountRenamer.java)|102 (9.3%)|92|90.2%|0|0.0%|10|9.8%|
 |[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FSusCommand.java)|45 (4.1%)|38|84.4%|0|0.0%|7|15.6%|
-|[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FUtilities.java)|14 (1.3%)|11|78.6%|1|7.1%|2|14.3%|
+|[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FUtilities.java)|13 (1.2%)|11|84.6%|0|0.0%|2|15.4%|
 |[VerifyCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FVerifyCommand.java)|57 (5.2%)|47|82.5%|0|0.0%|10|17.5%|
-|Average |54.7|42.9|X|3.5|X|8.3|X|
-|Total (20)|1094|858|78.4%|70| 6.4%|166|15.2%|
+|Average |54.8|43.0|X|3.5|X|8.3|X|
+|Total (20)|1095|860|78.5%|69| 6.3%|166|15.2%|
