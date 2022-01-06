@@ -54,8 +54,8 @@ public class SubCountRenamer {
             JsonObject rootItems = rootObj.getAsJsonArray("items").get(0).getAsJsonObject().getAsJsonObject("statistics");
             return rootItems.get("subscriberCount").getAsString();
         } else {
-            System.out.println("GET request failed. You should GET better.");
-            return "ERR_1";
+            System.out.println("GET request failed. You should GET better. (HTTP Error Code " + responseCode + ")");
+            return "-1";
         }
     }
 
@@ -68,13 +68,15 @@ public class SubCountRenamer {
                 try {
                     String subs = getSubscriberCount();
                     Long subsLong = Long.parseLong(subs);
-                    DecimalFormat myFormatter = new DecimalFormat("###,###");
-                    if (!subs.equals(Main.postedSubCt)) {
-                        setChannelName(CHANNEL_ID, SUBSCRIBER_NAME + ": " + myFormatter.format(subsLong), false);
-                        Main.postedSubCt = subs;
-                        System.out.println(Timestamp.from(Instant.now()) + "[Changed] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
-                    } else {
-                        System.out.println(Timestamp.from(Instant.now()) + "[No Change] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
+                    if (subsLong != -1) {
+                        DecimalFormat myFormatter = new DecimalFormat("###,###");
+                        if (!subs.equals(Main.postedSubCt)) {
+                            setChannelName(CHANNEL_ID, SUBSCRIBER_NAME + ": " + myFormatter.format(subsLong), false);
+                            Main.postedSubCt = subs;
+                            System.out.println(Timestamp.from(Instant.now()) + "[Changed] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
+                        } else {
+                            System.out.println(Timestamp.from(Instant.now()) + "[No Change] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
+                        }
                     }
                     Thread.sleep(60000);
                 } catch (Exception e) {
