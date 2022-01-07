@@ -5,12 +5,12 @@
 |[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FUtilities.java)|13 (1.2%)|11|84.6%|0|0.0%|2|15.4%|
 |[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FSusCommand.java)|45 (4.1%)|38|84.4%|0|0.0%|7|15.6%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FSubCountRenamer.java)|102 (9.3%)|92|90.2%|0|0.0%|10|9.8%|
+|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FRunner.java)|153 (14.0%)|110|71.9%|30|19.6%|13|8.5%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FRestartCommand.java)|40 (3.7%)|29|72.5%|5|12.5%|6|15.0%|
 |[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FPingCommand.java)|65 (5.9%)|54|83.1%|5|7.7%|6|9.2%|
 |[PatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FPatCommand.java)|49 (4.5%)|40|81.6%|0|0.0%|9|18.4%|
 |[PaciCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FPaciCommand.java)|39 (3.6%)|33|84.6%|0|0.0%|6|15.4%|
 |[MemeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FMemeCommand.java)|41 (3.7%)|32|78.0%|0|0.0%|9|22.0%|
-|[Main.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FMain.java)|153 (14.0%)|110|71.9%|30|19.6%|13|8.5%|
 |[KissCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FKissCommand.java)|54 (4.9%)|44|81.5%|0|0.0%|10|18.5%|
 |[KickCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FKickCommand.java)|61 (5.6%)|50|82.0%|0|0.0%|11|18.0%|
 |[HugCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FHugCommand.java)|54 (4.9%)|44|81.5%|0|0.0%|10|18.5%|

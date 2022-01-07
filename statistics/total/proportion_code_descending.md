@@ -19,7 +19,7 @@
 |[MemeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FMemeCommand.java)|41 (3.7%)|32|78.0%|0|0.0%|9|22.0%|
 |[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FConfiguration.java)|35 (3.2%)|26|74.3%|6|17.1%|3|8.6%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FRestartCommand.java)|40 (3.7%)|29|72.5%|5|12.5%|6|15.0%|
-|[Main.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FMain.java)|153 (14.0%)|110|71.9%|30|19.6%|13|8.5%|
+|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FRunner.java)|153 (14.0%)|110|71.9%|30|19.6%|13|8.5%|
 |[AbstractCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FAbstractCommand.java)|40 (3.7%)|13|32.5%|20|50.0%|7|17.5%|
 |Average |54.8|43.0|X|3.5|X|8.3|X|
 |Total (20)|1095|860|78.5%|69| 6.3%|166|15.2%|

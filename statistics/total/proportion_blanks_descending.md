@@ -20,6 +20,6 @@
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FSubCountRenamer.java)|102 (9.3%)|92|90.2%|0|0.0%|10|9.8%|
 |[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FCommands%2FPingCommand.java)|65 (5.9%)|54|83.1%|5|7.7%|6|9.2%|
 |[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FConfiguration.java)|35 (3.2%)|26|74.3%|6|17.1%|3|8.6%|
-|[Main.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FMain.java)|153 (14.0%)|110|71.9%|30|19.6%|13|8.5%|
+|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/master/src%2Fmain%2Fjava%2Fcom%2Fgithub%2FSmaltin%2FRunner.java)|153 (14.0%)|110|71.9%|30|19.6%|13|8.5%|
 |Average |54.8|43.0|X|3.5|X|8.3|X|
 |Total (20)|1095|860|78.5%|69| 6.3%|166|15.2%|
