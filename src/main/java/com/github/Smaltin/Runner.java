@@ -23,7 +23,7 @@ import java.util.Properties;
 import static com.github.Smaltin.Configuration.BOTKEY;
 import static com.github.Smaltin.Configuration.DEVELOPER_MODE;
 
-public class Main extends ListenerAdapter {
+public class Runner extends ListenerAdapter {
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
     public static final String PREFIX = getEnv("PREFIX");
@@ -36,7 +36,7 @@ public class Main extends ListenerAdapter {
             if (isInternetWorking())
                 break;
         }
-        holder = JDABuilder.createDefault(BOTKEY).addEventListeners(new Main()).build();
+        holder = JDABuilder.createDefault(BOTKEY).addEventListeners(new Runner()).build();
         holder.awaitReady();
         loadCommands();
         holder.getPresence().setActivity(Activity.listening("Avilon's Music"));

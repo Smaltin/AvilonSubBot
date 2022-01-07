@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class Configuration {
-    public static final boolean DEVELOPER_MODE = true;
+    public static final boolean DEVELOPER_MODE = false;
     public static final long CHANNEL_ID = Long.parseLong(getEnv("SUBCT_CHANNEL_ID"));
     public static final String BOTKEY = getEnv("BOTKEY");
     public static final String YOUTUBE_CHANNEL = getEnv("YOUTUBE_CHANNEL");

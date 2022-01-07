@@ -19,7 +19,7 @@ import static com.github.Smaltin.Configuration.*;
 public class SubCountRenamer {
 
     public static void setChannelName(long channelId, String channelName, boolean tryAgain) throws InterruptedException {
-        GuildChannel channel = Main.holder.getGuildChannelById(channelId);
+        GuildChannel channel = Runner.holder.getGuildChannelById(channelId);
         ChannelManager channelManager;
         if (channel != null) {
             channelManager = channel.getManager();
@@ -70,9 +70,9 @@ public class SubCountRenamer {
                     Long subsLong = Long.parseLong(subs);
                     if (subsLong != -1) {
                         DecimalFormat myFormatter = new DecimalFormat("###,###");
-                        if (!subs.equals(Main.postedSubCt)) {
+                        if (!subs.equals(Runner.postedSubCt)) {
                             setChannelName(CHANNEL_ID, SUBSCRIBER_NAME + ": " + myFormatter.format(subsLong), false);
-                            Main.postedSubCt = subs;
+                            Runner.postedSubCt = subs;
                             System.out.println(Timestamp.from(Instant.now()) + "[Changed] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
                         } else {
                             System.out.println(Timestamp.from(Instant.now()) + "[No Change] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
