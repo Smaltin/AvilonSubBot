@@ -1,4 +1,4 @@
-package com.github.Smaltin.Commands;
+package io.github.Smaltin.AvilonSubBot.Commands;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;

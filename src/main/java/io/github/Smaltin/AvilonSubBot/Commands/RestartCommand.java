@@ -1,6 +1,6 @@
-package com.github.Smaltin.Commands;
+package io.github.Smaltin.AvilonSubBot.Commands;
 
-import com.github.Smaltin.Utilities;
+import io.github.Smaltin.AvilonSubBot.Utilities;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;

@@ -1,4 +1,4 @@
-package com.github.Smaltin;
+package io.github.Smaltin.AvilonSubBot;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -13,8 +13,6 @@ import java.net.URL;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.time.Instant;
-
-import static com.github.Smaltin.Configuration.*;
 
 public class SubCountRenamer {
 
@@ -35,7 +33,7 @@ public class SubCountRenamer {
     }
 
     public static String getSubscriberCount() throws IOException {
-        String webRequest = API_ENDPOINT;
+        String webRequest = Configuration.API_ENDPOINT;
         URL url = new URL(webRequest);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestProperty("accept", "application/json");
@@ -71,11 +69,11 @@ public class SubCountRenamer {
                     if (subsLong != -1) {
                         DecimalFormat myFormatter = new DecimalFormat("###,###");
                         if (!subs.equals(Runner.postedSubCt)) {
-                            setChannelName(CHANNEL_ID, SUBSCRIBER_NAME + ": " + myFormatter.format(subsLong), false);
+                            setChannelName(Configuration.CHANNEL_ID, Configuration.SUBSCRIBER_NAME + ": " + myFormatter.format(subsLong), false);
                             Runner.postedSubCt = subs;
-                            System.out.println(Timestamp.from(Instant.now()) + "[Changed] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
+                            System.out.println(Timestamp.from(Instant.now()) + "[Changed] " + myFormatter.format(subsLong) + " " + Configuration.SUBSCRIBER_NAME);
                         } else {
-                            System.out.println(Timestamp.from(Instant.now()) + "[No Change] " + myFormatter.format(subsLong) + " " + SUBSCRIBER_NAME);
+                            System.out.println(Timestamp.from(Instant.now()) + "[No Change] " + myFormatter.format(subsLong) + " " + Configuration.SUBSCRIBER_NAME);
                         }
                     }
                     Thread.sleep(60000);

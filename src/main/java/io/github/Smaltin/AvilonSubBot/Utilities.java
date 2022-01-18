@@ -1,4 +1,4 @@
-package com.github.Smaltin;
+package io.github.Smaltin.AvilonSubBot;
 
 import net.dv8tion.jda.api.entities.User;
 

@@ -1,6 +1,6 @@
-package com.github.Smaltin;
+package io.github.Smaltin.AvilonSubBot;
 
-import com.github.Smaltin.Commands.*;
+import io.github.Smaltin.AvilonSubBot.Commands.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -20,9 +20,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
-import static com.github.Smaltin.Configuration.BOTKEY;
-import static com.github.Smaltin.Configuration.DEVELOPER_MODE;
-
 public class Runner extends ListenerAdapter {
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
@@ -32,11 +29,12 @@ public class Runner extends ListenerAdapter {
     public static String postedSubCt;
 
     public static void main(String[] args) throws LoginException, InterruptedException {
+        Configuration.DEVELOPER_MODE = (args[0].equals("true"));
         while (true) {
             if (isInternetWorking())
                 break;
         }
-        holder = JDABuilder.createDefault(BOTKEY).addEventListeners(new Runner()).build();
+        holder = JDABuilder.createDefault(Configuration.BOTKEY).addEventListeners(new Runner()).build();
         holder.awaitReady();
         loadCommands();
         holder.getPresence().setActivity(Activity.listening("Avilon's Music"));
@@ -69,7 +67,8 @@ public class Runner extends ListenerAdapter {
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
         List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class);
-        for (Class<? extends AbstractCommand> s : classes) { //TODO add "eject" and finish Sus Command
+        for (Class<? extends AbstractCommand> s : classes) { //TODO add "eject" and sus commands
+            //TODO add music
             try {
                 if (Modifier.isAbstract(s.getModifiers())) {
                     continue;
@@ -98,7 +97,7 @@ public class Runner extends ListenerAdapter {
     public static String getEnv(String key) {
         try {
             Properties loadProps = new Properties();
-            loadProps.load(new FileInputStream((DEVELOPER_MODE ? "dev-" : "") + "settings.env"));
+            loadProps.load(new FileInputStream((Configuration.DEVELOPER_MODE ? "dev-" : "") + "settings.env"));
             return loadProps.getProperty(key);
         } catch (Exception e) {
             e.printStackTrace();
