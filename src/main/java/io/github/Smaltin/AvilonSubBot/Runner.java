@@ -1,6 +1,11 @@
 package io.github.Smaltin.AvilonSubBot;
 
+import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
+import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import io.github.Smaltin.AvilonSubBot.Commands.*;
+import io.github.Smaltin.AvilonSubBot.Commands.Music.PlayCommand;
+import io.github.Smaltin.AvilonSubBot.Commands.Music.SkipCommand;
+import io.github.Smaltin.AvilonSubBot.MusicUtilities.MusicUtilities;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -20,24 +25,39 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
+import static io.github.Smaltin.AvilonSubBot.Configuration.*;
+import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_MESSAGES;
+import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_VOICE_STATES;
+
 public class Runner extends ListenerAdapter {
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
-    public static final String PREFIX = getEnv("PREFIX");
-    public static final String CODE_VERSION = "0.0.1";
+    public static final String CODE_VERSION = "0.0.2";
     public static JDA holder;
     public static String postedSubCt;
 
+
     public static void main(String[] args) throws LoginException, InterruptedException {
-        Configuration.DEVELOPER_MODE = (args[0].equals("true"));
-        while (true) {
-            if (isInternetWorking())
-                break;
+        MusicUtilities.musicManagers = new HashMap<>();
+        MusicUtilities.playerManager = new DefaultAudioPlayerManager();
+        AudioSourceManagers.registerLocalSource(MusicUtilities.playerManager);
+        if (args.length >= 1) DEVELOPER_MODE = (args[0].equals("true"));
+        try { //If it's not developer mode from command line, check the environment variables
+            if (!DEVELOPER_MODE) {
+                DEVELOPER_MODE = System.getenv("dev").equals("true");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        holder = JDABuilder.createDefault(Configuration.BOTKEY).addEventListeners(new Runner()).build();
+        while (true) {
+            if (isInternetWorking()) break;
+        }
+        updateEnv();
+        if (DEVELOPER_MODE) System.out.println("Hello nerd. Imagine being a programmer, couldn't be me... wait..");
+        holder = JDABuilder.createDefault(Configuration.BOTKEY, GUILD_MESSAGES, GUILD_VOICE_STATES).addEventListeners(new Runner()).build();
         holder.awaitReady();
         loadCommands();
-        holder.getPresence().setActivity(Activity.listening("Avilon's Music"));
+        holder.getPresence().setActivity(Activity.listening(!DEVELOPER_MODE ? "Avilon's Music" : "Smaltin's sick 'grammer beats"));
         SubCountRenamer.SubCounter thread = new SubCountRenamer.SubCounter();
         thread.start();
     }
@@ -66,9 +86,9 @@ public class Runner extends ListenerAdapter {
      */
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class);
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, PlayCommand.class, SkipCommand.class);
         for (Class<? extends AbstractCommand> s : classes) { //TODO add "eject" and sus commands
-            //TODO add music
+            //TODO make music betterer
             try {
                 if (Modifier.isAbstract(s.getModifiers())) {
                     continue;
@@ -97,7 +117,7 @@ public class Runner extends ListenerAdapter {
     public static String getEnv(String key) {
         try {
             Properties loadProps = new Properties();
-            loadProps.load(new FileInputStream((Configuration.DEVELOPER_MODE ? "dev-" : "") + "settings.env"));
+            loadProps.load(new FileInputStream((DEVELOPER_MODE ? "dev-" : "") + "settings.env"));
             return loadProps.getProperty(key);
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,10 +133,8 @@ public class Runner extends ListenerAdapter {
      */
     @Override
     public void onMessageReceived(MessageReceivedEvent message) {
-        if (message.getAuthor().isBot())
-            return;
-        if (!message.isFromGuild())
-            return;
+        if (message.getAuthor().isBot()) return;
+        if (!message.isFromGuild()) return;
 
         Message msg = message.getMessage();
 
@@ -127,8 +145,7 @@ public class Runner extends ListenerAdapter {
         if (msg.getContentRaw().startsWith(PREFIX) && getCommand(msg.getContentRaw()) != null) {
             System.out.println("Recieved Message: " + message.getMessage().getContentRaw());
             AbstractCommand command = getCommand(message.getMessage().getContentRaw());
-            if (command == null)
-                return;
+            if (command == null) return;
             command.runCommand(holder, message, msg);
         }
     }
@@ -143,10 +160,8 @@ public class Runner extends ListenerAdapter {
     @Nullable
     public static AbstractCommand getCommand(String message) {
         message = message.replace(PREFIX, "").split(" ")[0];
-        if (commands.containsKey(message))
-            return commands.get(message);
-        if (commandsAlias.containsKey(message))
-            return commandsAlias.get(message);
+        if (commands.containsKey(message)) return commands.get(message);
+        if (commandsAlias.containsKey(message)) return commandsAlias.get(message);
         return null;
     }
 }
