@@ -40,12 +40,11 @@ public class MusicUtilities {
     public static void skipTrack(TextChannel channel) {
         GuildMusicManager musicManager = getGuildAudioPlayer(channel.getGuild());
         musicManager.scheduler.nextTrack();
-
         channel.sendMessage("Skipped to next track.").queue();
     }
 
     private static void connectToFirstVoiceChannel(AudioManager audioManager) {
-        if (!audioManager.isConnected() && !audioManager.isAttemptingToConnect()) {
+        if (!audioManager.isConnected()) {
             for (VoiceChannel voiceChannel : audioManager.getGuild().getVoiceChannels()) {
                 audioManager.openAudioConnection(voiceChannel);
                 break;

@@ -12,6 +12,7 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.kodehawa.lib.imageboards.ImageBoard;
 import org.jetbrains.annotations.Nullable;
 
 import javax.security.auth.login.LoginException;
@@ -53,7 +54,8 @@ public class Runner extends ListenerAdapter {
             if (isInternetWorking()) break;
         }
         updateEnv();
-        if (DEVELOPER_MODE) System.out.println("Hello nerd. Imagine being a programmer, couldn't be me... wait..");
+        ImageBoard.setUserAgent("Mozilla/5.0 (compatible; "+ "AvilonSubBot/" + CODE_VERSION + "; +github.com/Smaltin/AvilonSubBot)");
+        if (DEVELOPER_MODE) System.out.println("Hello nerd. Imagine being a programmer, couldn't be me... wait.."); else System.out.println("AvilonSubBot running code v" + CODE_VERSION + " :)");
         holder = JDABuilder.createDefault(Configuration.BOTKEY, GUILD_MESSAGES, GUILD_VOICE_STATES).addEventListeners(new Runner()).build();
         holder.awaitReady();
         loadCommands();

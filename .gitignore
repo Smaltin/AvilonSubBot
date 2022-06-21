@@ -167,3 +167,4 @@ imgui.ini
 
 # extra stuff
 *.env
+temp.*
