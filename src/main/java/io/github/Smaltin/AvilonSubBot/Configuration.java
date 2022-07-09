@@ -1,10 +1,14 @@
 package io.github.Smaltin.AvilonSubBot;
 
 import java.io.FileInputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class Configuration {
     public static boolean DEVELOPER_MODE;
+
+    public static String SETTINGS_FILEPATH;
     public static long CHANNEL_ID;
     public static String BOTKEY;
     public static String YOUTUBE_CHANNEL;
@@ -26,7 +30,7 @@ public class Configuration {
     public static String getEnv(String key) {
         try {
             Properties loadProps = new Properties();
-            loadProps.load(new FileInputStream((DEVELOPER_MODE ? "dev-" : "") + "settings.env"));
+            loadProps.load(Files.newInputStream(Paths.get(SETTINGS_FILEPATH)));
             return loadProps.getProperty(key);
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,6 +39,7 @@ public class Configuration {
     }
 
     public static void updateEnv() {
+        DEVELOPER_MODE = Boolean.parseBoolean(getEnv("DEV"));
         CHANNEL_ID = Long.parseLong(getEnv("SUBCT_CHANNEL_ID"));
         BOTKEY = getEnv("BOTKEY");
         YOUTUBE_CHANNEL = getEnv("YOUTUBE_CHANNEL");

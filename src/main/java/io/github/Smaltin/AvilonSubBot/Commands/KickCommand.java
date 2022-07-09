@@ -51,7 +51,7 @@ public class KickCommand extends AbstractCommand {
         String reason = split.length >= 3 ? String.join(" ", Arrays.copyOfRange(split, 3, split.length)) : null;
 
         event.getGuild()
-                .kick(target, "hi")
+                .kick(target)
                 .reason(reason)
                 .queue(
                         (__) -> event.getChannel().sendMessage("Kick was successful").queue(),

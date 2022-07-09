@@ -11,11 +11,17 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 
 import static io.github.Smaltin.AvilonSubBot.Configuration.PREFIX;
 
 public class HololivePhotoCommand extends AbstractCommand {
+
+    private static HashMap<String, Long> channelRateLimit = new HashMap<>();
     @Override
     public String getCommand() {
         return "hololive";
@@ -33,6 +39,13 @@ public class HololivePhotoCommand extends AbstractCommand {
 
     @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
+        Long time = channelRateLimit.getOrDefault(msg.getChannel().getId(), System.currentTimeMillis() - 5000);
+        if (System.currentTimeMillis() <= time) {
+            msg.reply("Please wait 5 seconds between running this command. The cooldown is to prevent rate limiting.").queue();
+            return;
+        } else {
+            channelRateLimit.put(msg.getChannel().getId(), System.currentTimeMillis() + 5000);
+        }
         String tags = "hololive" + msg.getContentRaw().substring(PREFIX.length() + getCommand().length());
         try {
             int page = 1 + (int) (Math.random() * 1000);
@@ -42,13 +55,7 @@ public class HololivePhotoCommand extends AbstractCommand {
             List<SafebooruImage> images = DefaultImageBoards.SAFEBOORU.search(page, 100, tags).blocking();
             if (images.size() >= 1) {
                 BoardImage image = images.get((int) (Math.random() * images.size()));
-                URL url = new URL(image.getURL());
-                BufferedImage img = ImageIO.read(url);
-                String extension = image.getURL().substring(image.getURL().lastIndexOf(".") + 1);
-                File file = new File("temp." + extension);
-                ImageIO.write(img, extension, file);
-                msg.reply(file).queue();
-                file.delete();
+                msg.reply(image.getURL()).queue();
             } else {
                 msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").queue();
             }

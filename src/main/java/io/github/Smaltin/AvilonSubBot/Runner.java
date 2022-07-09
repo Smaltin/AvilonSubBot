@@ -3,8 +3,8 @@ package io.github.Smaltin.AvilonSubBot;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import io.github.Smaltin.AvilonSubBot.Commands.*;
-import io.github.Smaltin.AvilonSubBot.Commands.Music.PlayCommand;
-import io.github.Smaltin.AvilonSubBot.Commands.Music.SkipCommand;
+//import io.github.Smaltin.AvilonSubBot.Commands.Music.PlayCommand;
+//import io.github.Smaltin.AvilonSubBot.Commands.Music.SkipCommand;
 import io.github.Smaltin.AvilonSubBot.MusicUtilities.MusicUtilities;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -16,11 +16,15 @@ import net.kodehawa.lib.imageboards.ImageBoard;
 import org.jetbrains.annotations.Nullable;
 
 import javax.security.auth.login.LoginException;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -38,23 +42,22 @@ public class Runner extends ListenerAdapter {
     public static String postedSubCt;
 
 
-    public static void main(String[] args) throws LoginException, InterruptedException {
+    public static void main(String[] args) throws LoginException, InterruptedException, FileNotFoundException {
         MusicUtilities.musicManagers = new HashMap<>();
         MusicUtilities.playerManager = new DefaultAudioPlayerManager();
         AudioSourceManagers.registerLocalSource(MusicUtilities.playerManager);
-        if (args.length >= 1) DEVELOPER_MODE = (args[0].equals("true"));
-        try { //If it's not developer mode from command line, check the environment variables
-            if (!DEVELOPER_MODE) {
-                DEVELOPER_MODE = System.getenv("dev").equals("true");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (args.length != 1) {
+            throw new IllegalArgumentException("You must provide ONE valid filepath for a settings file.");
+        }
+        SETTINGS_FILEPATH = args[0];
+        if (!new File(SETTINGS_FILEPATH).exists()) {
+            throw new FileNotFoundException("File doesn't exist. You must provide a valid filepath for a settings file.");
         }
         while (true) {
             if (isInternetWorking()) break;
         }
         updateEnv();
-        ImageBoard.setUserAgent("Mozilla/5.0 (compatible; "+ "AvilonSubBot/" + CODE_VERSION + "; +github.com/Smaltin/AvilonSubBot)");
+        ImageBoard.setUserAgent("Mozilla/5.0 (compatible; AvilonSubBot/" + CODE_VERSION + "; +github.com/Smaltin/AvilonSubBot)");
         if (DEVELOPER_MODE) System.out.println("Hello nerd. Imagine being a programmer, couldn't be me... wait.."); else System.out.println("AvilonSubBot running code v" + CODE_VERSION + " :)");
         holder = JDABuilder.createDefault(Configuration.BOTKEY, GUILD_MESSAGES, GUILD_VOICE_STATES).addEventListeners(new Runner()).build();
         holder.awaitReady();
@@ -119,7 +122,7 @@ public class Runner extends ListenerAdapter {
     public static String getEnv(String key) {
         try {
             Properties loadProps = new Properties();
-            loadProps.load(new FileInputStream((DEVELOPER_MODE ? "dev-" : "") + "settings.env"));
+            loadProps.load(Files.newInputStream(Paths.get(SETTINGS_FILEPATH)));
             return loadProps.getProperty(key);
         } catch (Exception e) {
             e.printStackTrace();
