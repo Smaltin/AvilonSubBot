@@ -7,17 +7,11 @@ import net.kodehawa.lib.imageboards.DefaultImageBoards;
 import net.kodehawa.lib.imageboards.entities.BoardImage;
 import net.kodehawa.lib.imageboards.entities.impl.SafebooruImage;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
 
 import static io.github.Smaltin.AvilonSubBot.Configuration.PREFIX;
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class HololivePhotoCommand extends AbstractCommand {
 
@@ -41,7 +35,10 @@ public class HololivePhotoCommand extends AbstractCommand {
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         Long time = channelRateLimit.getOrDefault(msg.getChannel().getId(), System.currentTimeMillis() - 5000);
         if (System.currentTimeMillis() <= time) {
-            msg.reply("Please wait 5 seconds between running this command. The cooldown is to prevent rate limiting.").queue();
+            msg.reply("Please wait 5 seconds between running this command. The cooldown is to prevent rate limiting.")
+                    .delay(5, SECONDS, null) // delete 5 seconds later
+                    .flatMap(Message::delete)
+                    .queue();
             return;
         } else {
             channelRateLimit.put(msg.getChannel().getId(), System.currentTimeMillis() + 5000);
@@ -57,7 +54,10 @@ public class HololivePhotoCommand extends AbstractCommand {
                 BoardImage image = images.get((int) (Math.random() * images.size()));
                 msg.reply(image.getURL()).queue();
             } else {
-                msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").queue();
+                msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.")
+                        .delay(5, SECONDS, null) // delete 5 seconds later
+                        .flatMap(Message::delete)
+                        .queue();
             }
         } catch (Exception e) {
             msg.reply("New exception\n" + e).queue();
