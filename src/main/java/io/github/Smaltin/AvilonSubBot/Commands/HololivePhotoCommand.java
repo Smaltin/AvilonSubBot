@@ -13,7 +13,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class HololivePhotoCommand extends AbstractCommand {
 
-    private static HashMap<String, Long> channelRateLimit = new HashMap<>();
+    private static final HashMap<String, Long> channelRateLimit = new HashMap<>();
 
     @Override
     public String getCommand() {

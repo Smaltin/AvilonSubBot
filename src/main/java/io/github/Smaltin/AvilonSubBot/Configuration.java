@@ -1,6 +1,5 @@
 package io.github.Smaltin.AvilonSubBot;
 
-import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
