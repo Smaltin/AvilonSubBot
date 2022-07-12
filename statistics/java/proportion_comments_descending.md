@@ -8,7 +8,7 @@
 |[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|43 (2.8%)|28|65.1%|8|18.6%|7|16.3%|
 |[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|171 (11.1%)|126|73.7%|31|18.1%|14|8.2%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FRestartCommand.java)|40 (2.6%)|29|72.5%|5|12.5%|6|15.0%|
-|[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FConfiguration.java)|55 (3.6%)|44|80.0%|6|10.9%|5|9.1%|
+|[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FConfiguration.java)|54 (3.5%)|43|79.6%|6|11.1%|5|9.3%|
 |[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FPingCommand.java)|65 (4.2%)|54|83.1%|5|7.7%|6|9.2%|
 |[HelpCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHelpCommand.java)|45 (2.9%)|36|80.0%|3|6.7%|6|13.3%|
 |[MusicUtilities.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FMusicUtilities.java)|95 (6.2%)|69|72.6%|6|6.3%|20|21.1%|
@@ -29,5 +29,5 @@
 |[VerifyCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FVerifyCommand.java)|71 (4.6%)|61|85.9%|0|0.0%|10|14.1%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FSubCountRenamer.java)|98 (6.4%)|89|90.8%|0|0.0%|9|9.2%|
 |[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FUtilities.java)|13 (0.8%)|11|84.6%|0|0.0%|2|15.4%|
-|Average |55.1|42.1|X|4.7|X|8.3|X|
-|Total (28)|1542|1178|76.4%|131| 8.5%|233|15.1%|
+|Average |55.0|42.0|X|4.7|X|8.3|X|
+|Total (28)|1541|1177|76.4%|131| 8.5%|233|15.1%|

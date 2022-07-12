@@ -16,7 +16,7 @@
 |[KissCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FKissCommand.java)|54 (3.5%)|44|81.5%|0|0.0%|10|18.5%|
 |[AviTimeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAviTimeCommand.java)|42 (2.7%)|34|81.0%|0|0.0%|8|19.0%|
 |[HelpCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHelpCommand.java)|45 (2.9%)|36|80.0%|3|6.7%|6|13.3%|
-|[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FConfiguration.java)|55 (3.6%)|44|80.0%|6|10.9%|5|9.1%|
+|[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FConfiguration.java)|54 (3.5%)|43|79.6%|6|11.1%|5|9.3%|
 |[BanCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FBanCommand.java)|63 (4.1%)|50|79.4%|0|0.0%|13|20.6%|
 |[QueueCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FQueueCommand.java)|33 (2.1%)|26|78.8%|0|0.0%|7|21.2%|
 |[CatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FCatCommand.java)|46 (3.0%)|36|78.3%|0|0.0%|10|21.7%|
@@ -29,5 +29,5 @@
 |[TrackScheduler.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FTrackScheduler.java)|56 (3.6%)|29|51.8%|20|35.7%|7|12.5%|
 |[GuildMusicManager.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FGuildMusicManager.java)|36 (2.3%)|15|41.7%|17|47.2%|4|11.1%|
 |[AbstractCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAbstractCommand.java)|40 (2.6%)|13|32.5%|20|50.0%|7|17.5%|
-|Average |55.1|42.1|X|4.7|X|8.3|X|
-|Total (28)|1542|1178|76.4%|131| 8.5%|233|15.1%|
+|Average |55.0|42.0|X|4.7|X|8.3|X|
+|Total (28)|1541|1177|76.4%|131| 8.5%|233|15.1%|

@@ -2,9 +2,9 @@
 |[File](https://github.com/Smaltin/AvilonSubBot/tree/development/statistics%2Fjava%2Fname_ascending.md%2F)|[Lines (% total)](https://github.com/Smaltin/AvilonSubBot/tree/development/statistics%2Fjava%2Flines_descending.md%2F)|[Code Lines](https://github.com/Smaltin/AvilonSubBot/tree/development/statistics%2Fjava%2Fcode_descending.md%2F)|[% Code](https://github.com/Smaltin/AvilonSubBot/tree/development/statistics%2Fjava%2Fproportion_code_descending.md%2F)|[Comment Lines](https://github.com/Smaltin/AvilonSubBot/tree/development/statistics%2Fjava%2Fcomments_descending.md%2F)|[% Comment](https://github.com/Smaltin/AvilonSubBot/tree/development/statistics%2Fjava%2Fproportion_comments_descending.md%2F)|[Blank Lines](https://github.com/Smaltin/AvilonSubBot/tree/development/statistics%2Fjava%2Fblanks_descending.md%2F)|[% Blank](https://github.com/Smaltin/AvilonSubBot/tree/development/statistics%2Fjava%2Fproportion_blanks_descending.md%2F)|
 | --- | --- | --- | --- | --- | --- | --- | --- |
 |[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|171 (11.1%)|126|73.7%|31|18.1%|14|8.2%|
-|[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FConfiguration.java)|55 (3.6%)|44|80.0%|6|10.9%|5|9.1%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FSubCountRenamer.java)|98 (6.4%)|89|90.8%|0|0.0%|9|9.2%|
 |[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FPingCommand.java)|65 (4.2%)|54|83.1%|5|7.7%|6|9.2%|
+|[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FConfiguration.java)|54 (3.5%)|43|79.6%|6|11.1%|5|9.3%|
 |[GuildMusicManager.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FGuildMusicManager.java)|36 (2.3%)|15|41.7%|17|47.2%|4|11.1%|
 |[TrackScheduler.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FTrackScheduler.java)|56 (3.6%)|29|51.8%|20|35.7%|7|12.5%|
 |[HelpCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHelpCommand.java)|45 (2.9%)|36|80.0%|3|6.7%|6|13.3%|
@@ -29,5 +29,5 @@
 |[QueueCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FQueueCommand.java)|33 (2.1%)|26|78.8%|0|0.0%|7|21.2%|
 |[CatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FCatCommand.java)|46 (3.0%)|36|78.3%|0|0.0%|10|21.7%|
 |[MemeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMemeCommand.java)|41 (2.7%)|32|78.0%|0|0.0%|9|22.0%|
-|Average |55.1|42.1|X|4.7|X|8.3|X|
-|Total (28)|1542|1178|76.4%|131| 8.5%|233|15.1%|
+|Average |55.0|42.0|X|4.7|X|8.3|X|
+|Total (28)|1541|1177|76.4%|131| 8.5%|233|15.1%|
