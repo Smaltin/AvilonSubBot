@@ -5,10 +5,8 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.kodehawa.lib.imageboards.DefaultImageBoards;
 import net.kodehawa.lib.imageboards.entities.BoardImage;
-import net.kodehawa.lib.imageboards.entities.impl.SafebooruImage;
 
 import java.util.HashMap;
-import java.util.List;
 
 import static io.github.Smaltin.AvilonSubBot.Configuration.PREFIX;
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -16,6 +14,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class HololivePhotoCommand extends AbstractCommand {
 
     private static HashMap<String, Long> channelRateLimit = new HashMap<>();
+
     @Override
     public String getCommand() {
         return "hololive";
@@ -44,21 +43,23 @@ public class HololivePhotoCommand extends AbstractCommand {
             channelRateLimit.put(msg.getChannel().getId(), System.currentTimeMillis() + 5000);
         }
         String tags = "hololive" + msg.getContentRaw().substring(PREFIX.length() + getCommand().length());
+        System.out.println("User " + msg.getAuthor().getAsTag() + " is searching Safebooru using tag(s) '" + tags + "'");
         try {
             int page = 1 + (int) (Math.random() * 1000);
             if (tags.length() > 8) {
                 page = 1;
             }
-            List<SafebooruImage> images = DefaultImageBoards.SAFEBOORU.search(page, 100, tags).blocking();
-            if (images.size() >= 1) {
-                BoardImage image = images.get((int) (Math.random() * images.size()));
-                msg.reply(image.getURL()).queue();
-            } else {
-                msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.")
-                        .delay(5, SECONDS, null) // delete 5 seconds later
-                        .flatMap(Message::delete)
-                        .queue();
-            }
+            DefaultImageBoards.SAFEBOORU.search(page, 100, tags).async(images -> {
+                if (images.size() >= 1) {
+                    BoardImage image = images.get((int) (Math.random() * images.size()));
+                    msg.reply(image.getURL()).queue();
+                } else {
+                    msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.")
+                            .delay(5, SECONDS, null) // delete 5 seconds later
+                            .flatMap(Message::delete)
+                            .queue();
+                }
+            });
         } catch (Exception e) {
             msg.reply("New exception\n" + e).queue();
         }

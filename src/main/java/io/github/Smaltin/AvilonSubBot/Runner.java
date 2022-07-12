@@ -3,8 +3,6 @@ package io.github.Smaltin.AvilonSubBot;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import io.github.Smaltin.AvilonSubBot.Commands.*;
-//import io.github.Smaltin.AvilonSubBot.Commands.Music.PlayCommand;
-//import io.github.Smaltin.AvilonSubBot.Commands.Music.SkipCommand;
 import io.github.Smaltin.AvilonSubBot.MusicUtilities.MusicUtilities;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -57,7 +55,8 @@ public class Runner extends ListenerAdapter {
         }
         updateEnv();
         ImageBoard.setUserAgent("Mozilla/5.0 (compatible; AvilonSubBot/" + CODE_VERSION + "; +github.com/Smaltin/AvilonSubBot)");
-        if (DEVELOPER_MODE) System.out.println("Hello nerd. Imagine being a programmer, couldn't be me... wait.."); else System.out.println("AvilonSubBot running code v" + CODE_VERSION + " :)");
+        if (DEVELOPER_MODE) System.out.println("Hello nerd. Imagine being a programmer, couldn't be me... wait..");
+        else System.out.println("AvilonSubBot running code v" + CODE_VERSION + " :)");
         holder = JDABuilder.createDefault(Configuration.BOTKEY, GUILD_MESSAGES, GUILD_VOICE_STATES).addEventListeners(new Runner()).build();
         holder.awaitReady();
         loadCommands();
@@ -106,7 +105,8 @@ public class Runner extends ListenerAdapter {
                         commandsAlias.put(alias, c);
                     }
                 }
-            } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                     NoSuchMethodException e) {
                 e.printStackTrace();
             }
         }
