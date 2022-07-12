@@ -4,16 +4,16 @@ AviTimeCommand.java,42 (51.2%),34,81.0%,0,0.0%,8,19.0%
 BanCommand.java,63 (43.4%),50,79.4%,0,0.0%,13,20.6%
 CatCommand.java,46 (24.1%),36,78.3%,0,0.0%,10,21.7%
 HelpCommand.java,45 (19.1%),36,80.0%,3,6.7%,6,13.3%
-HololivePhotoCommand.java,66 (21.9%),58,87.9%,0,0.0%,8,12.1%
-HowPogCommand.java,49 (14.0%),40,81.6%,0,0.0%,9,18.4%
+HololivePhotoCommand.java,67 (22.1%),58,86.6%,0,0.0%,9,13.4%
+HowPogCommand.java,49 (13.9%),40,81.6%,0,0.0%,9,18.4%
 HugCommand.java,54 (13.3%),44,81.5%,0,0.0%,10,18.5%
 KickCommand.java,61 (13.1%),50,82.0%,0,0.0%,11,18.0%
 KissCommand.java,54 (10.4%),44,81.5%,0,0.0%,10,18.5%
 MemeCommand.java,41 (7.3%),32,78.0%,0,0.0%,9,22.0%
-PlayCommand.java,40 (6.7%),33,82.5%,0,0.0%,7,17.5%
+PlayCommand.java,40 (6.6%),33,82.5%,0,0.0%,7,17.5%
 QueueCommand.java,33 (5.2%),26,78.8%,0,0.0%,7,21.2%
 SkipCommand.java,29 (4.4%),24,82.8%,0,0.0%,5,17.2%
-PaciCommand.java,39 (5.6%),33,84.6%,0,0.0%,6,15.4%
+PaciCommand.java,39 (5.5%),33,84.6%,0,0.0%,6,15.4%
 PatCommand.java,49 (6.5%),40,81.6%,0,0.0%,9,18.4%
 PingCommand.java,65 (8.0%),54,83.1%,5,7.7%,6,9.2%
 RestartCommand.java,40 (4.7%),29,72.5%,5,12.5%,6,15.0%
@@ -24,7 +24,7 @@ AudioPlayerSendHandler.java,47 (4.4%),30,63.8%,10,21.3%,7,14.9%
 GuildMusicManager.java,36 (3.2%),15,41.7%,17,47.2%,4,11.1%
 MusicUtilities.java,95 (7.9%),69,72.6%,6,6.3%,20,21.1%
 TrackScheduler.java,56 (4.4%),29,51.8%,20,35.7%,7,12.5%
-Runner.java,171 (12.0%),124,72.5%,33,19.3%,14,8.2%
+Runner.java,171 (11.9%),126,73.7%,31,18.1%,14,8.2%
 SubCountRenamer.java,98 (6.4%),89,90.8%,0,0.0%,9,9.2%
 Utilities.java,13 (0.8%),11,84.6%,0,0.0%,2,15.4%
-Total,1541,1176,0.8,133,0.1,232,0.2
+Total,1542,1178,0.8,131,0.1,233,0.2

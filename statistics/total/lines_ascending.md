@@ -24,10 +24,10 @@
 |[KickCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FKickCommand.java)|61 (4.0%)|50|82.0%|0|0.0%|11|18.0%|
 |[BanCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FBanCommand.java)|63 (4.1%)|50|79.4%|0|0.0%|13|20.6%|
 |[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FPingCommand.java)|65 (4.2%)|54|83.1%|5|7.7%|6|9.2%|
-|[HololivePhotoCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHololivePhotoCommand.java)|66 (4.3%)|58|87.9%|0|0.0%|8|12.1%|
+|[HololivePhotoCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHololivePhotoCommand.java)|67 (4.3%)|58|86.6%|0|0.0%|9|13.4%|
 |[VerifyCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FVerifyCommand.java)|71 (4.6%)|61|85.9%|0|0.0%|10|14.1%|
 |[MusicUtilities.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FMusicUtilities.java)|95 (6.2%)|69|72.6%|6|6.3%|20|21.1%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FSubCountRenamer.java)|98 (6.4%)|89|90.8%|0|0.0%|9|9.2%|
-|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|171 (11.1%)|124|72.5%|33|19.3%|14|8.2%|
-|Average |55.0|42.0|X|4.8|X|8.3|X|
-|Total (28)|1541|1176|76.3%|133| 8.6%|232|15.1%|
+|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|171 (11.1%)|126|73.7%|31|18.1%|14|8.2%|
+|Average |55.1|42.1|X|4.7|X|8.3|X|
+|Total (28)|1542|1178|76.4%|131| 8.5%|233|15.1%|

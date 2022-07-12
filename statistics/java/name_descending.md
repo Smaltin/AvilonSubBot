@@ -7,7 +7,7 @@
 |[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|43 (2.8%)|28|65.1%|8|18.6%|7|16.3%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FSubCountRenamer.java)|98 (6.4%)|89|90.8%|0|0.0%|9|9.2%|
 |[SkipCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FSkipCommand.java)|29 (1.9%)|24|82.8%|0|0.0%|5|17.2%|
-|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|171 (11.1%)|124|72.5%|33|19.3%|14|8.2%|
+|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|171 (11.1%)|126|73.7%|31|18.1%|14|8.2%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FRestartCommand.java)|40 (2.6%)|29|72.5%|5|12.5%|6|15.0%|
 |[QueueCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FQueueCommand.java)|33 (2.1%)|26|78.8%|0|0.0%|7|21.2%|
 |[PlayCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FPlayCommand.java)|40 (2.6%)|33|82.5%|0|0.0%|7|17.5%|
@@ -20,7 +20,7 @@
 |[KickCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FKickCommand.java)|61 (4.0%)|50|82.0%|0|0.0%|11|18.0%|
 |[HugCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHugCommand.java)|54 (3.5%)|44|81.5%|0|0.0%|10|18.5%|
 |[HowPogCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHowPogCommand.java)|49 (3.2%)|40|81.6%|0|0.0%|9|18.4%|
-|[HololivePhotoCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHololivePhotoCommand.java)|66 (4.3%)|58|87.9%|0|0.0%|8|12.1%|
+|[HololivePhotoCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHololivePhotoCommand.java)|67 (4.3%)|58|86.6%|0|0.0%|9|13.4%|
 |[HelpCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHelpCommand.java)|45 (2.9%)|36|80.0%|3|6.7%|6|13.3%|
 |[GuildMusicManager.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FGuildMusicManager.java)|36 (2.3%)|15|41.7%|17|47.2%|4|11.1%|
 |[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FConfiguration.java)|55 (3.6%)|44|80.0%|6|10.9%|5|9.1%|
@@ -29,5 +29,5 @@
 |[AviTimeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAviTimeCommand.java)|42 (2.7%)|34|81.0%|0|0.0%|8|19.0%|
 |[AudioPlayerSendHandler.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FAudioPlayerSendHandler.java)|47 (3.0%)|30|63.8%|10|21.3%|7|14.9%|
 |[AbstractCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAbstractCommand.java)|40 (2.6%)|13|32.5%|20|50.0%|7|17.5%|
-|Average |55.0|42.0|X|4.8|X|8.3|X|
-|Total (28)|1541|1176|76.3%|133| 8.6%|232|15.1%|
+|Average |55.1|42.1|X|4.7|X|8.3|X|
+|Total (28)|1542|1178|76.4%|131| 8.5%|233|15.1%|
