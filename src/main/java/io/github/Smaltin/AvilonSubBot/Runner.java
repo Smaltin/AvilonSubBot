@@ -3,6 +3,11 @@ package io.github.Smaltin.AvilonSubBot;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import io.github.Smaltin.AvilonSubBot.Commands.*;
+import io.github.Smaltin.AvilonSubBot.Commands.Administration.BanCommand;
+import io.github.Smaltin.AvilonSubBot.Commands.DebugCommand;
+import io.github.Smaltin.AvilonSubBot.Commands.Administration.KickCommand;
+import io.github.Smaltin.AvilonSubBot.Commands.Administration.ReloadCommand;
+import io.github.Smaltin.AvilonSubBot.Commands.Administration.RestartCommand;
 import io.github.Smaltin.AvilonSubBot.MusicUtilities.MusicUtilities;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -34,15 +39,16 @@ import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_VOICE_STATES;
 public class Runner extends ListenerAdapter {
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
-    public static final String CODE_VERSION = "0.0.4";
+    public static final String CODE_VERSION = "0.0.5";
     public static JDA holder;
     public static String postedSubCt;
-
+    public static String LAUNCH_TIME;
 
     public static void main(String[] args) throws LoginException, InterruptedException, FileNotFoundException {
         MusicUtilities.musicManagers = new HashMap<>();
         MusicUtilities.playerManager = new DefaultAudioPlayerManager();
         AudioSourceManagers.registerLocalSource(MusicUtilities.playerManager);
+        LAUNCH_TIME = String.valueOf(System.currentTimeMillis());
         if (args.length != 1) {
             throw new IllegalArgumentException("You must provide ONE valid filepath for a settings file.");
         }
@@ -89,9 +95,9 @@ public class Runner extends ListenerAdapter {
      */
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, /*PlayCommand.class, SkipCommand.class*/HololivePhotoCommand.class);
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, /*PlayCommand.class, SkipCommand.class*/HololivePhotoCommand.class, ReloadCommand.class, DebugCommand.class);
         for (Class<? extends AbstractCommand> s : classes) { //TODO add "eject" and sus commands
-            //TODO make music betterer
+            //TODO make music
             try {
                 if (Modifier.isAbstract(s.getModifiers())) {
                     continue;

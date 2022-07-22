@@ -1,5 +1,6 @@
 package io.github.Smaltin.AvilonSubBot.Commands;
 
+import io.github.Smaltin.AvilonSubBot.UserRole;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -36,5 +37,9 @@ public abstract class AbstractCommand {
      */
     public String[] getAliases() {
         return new String[0];
+    }
+
+    public UserRole getRequiredRole() {
+        return UserRole.User;
     }
 }

@@ -19,6 +19,9 @@ public class Configuration {
     public static String VERIFY_REMOVE_ROLE_ID;
     public static String VERIFY_GENERAL_CHANNEL_ID;
     public static String PREFIX;
+    public static String[] ADMIN_IDS;
+
+    public static String CACHE_TIMESTAMP;
 
     /**
      * Enters into the settings.env file and pulls out the value you set
@@ -50,5 +53,7 @@ public class Configuration {
         VERIFY_REMOVE_ROLE_ID = getEnv("VERIFY_REMOVE_ROLE_ID");
         VERIFY_GENERAL_CHANNEL_ID = getEnv("VERIFY_GENERAL_CHANNEL_ID");
         PREFIX = getEnv("PREFIX");
+        ADMIN_IDS = getEnv("ADMIN_IDS").split(",");
+        CACHE_TIMESTAMP = String.valueOf(System.currentTimeMillis());
     }
 }
