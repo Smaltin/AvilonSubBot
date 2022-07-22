@@ -52,7 +52,7 @@ public class SubCountRenamer {
             JsonObject rootItems = rootObj.getAsJsonArray("items").get(0).getAsJsonObject().getAsJsonObject("statistics");
             return rootItems.get("subscriberCount").getAsString();
         } else {
-            System.out.println("GET request failed. You should GET better. (HTTP Error Code " + responseCode + ")");
+            System.out.println("GET request failed. You should GET good lol. (HTTP Error Code " + responseCode + ")");
             return "-1";
         }
     }
@@ -71,9 +71,9 @@ public class SubCountRenamer {
                         if (!subs.equals(Runner.postedSubCt)) {
                             setChannelName(Configuration.CHANNEL_ID, Configuration.SUBSCRIBER_NAME + ": " + myFormatter.format(subsLong), false);
                             Runner.postedSubCt = subs;
-                            System.out.println(Timestamp.from(Instant.now()) + "[Changed] " + myFormatter.format(subsLong) + " " + Configuration.SUBSCRIBER_NAME);
+                            System.out.println(Timestamp.from(Instant.now()) + " [Changed] " + myFormatter.format(subsLong) + " " + Configuration.SUBSCRIBER_NAME);
                         } else {
-                            System.out.println(Timestamp.from(Instant.now()) + "[No Change] " + myFormatter.format(subsLong) + " " + Configuration.SUBSCRIBER_NAME);
+                            System.out.println(Timestamp.from(Instant.now()) + " [No Change] " + myFormatter.format(subsLong) + " " + Configuration.SUBSCRIBER_NAME);
                         }
                     }
                     Thread.sleep(60000);
@@ -84,11 +84,9 @@ public class SubCountRenamer {
         }
     }
 
-    public static class ExceptionHandler implements Thread.UncaughtExceptionHandler
-    {
-        public void uncaughtException(Thread t, Throwable e)
-        {
-            System.out.print("An exception has been captured\n");
+    public static class ExceptionHandler implements Thread.UncaughtExceptionHandler {
+        public void uncaughtException(Thread t, Throwable e) {
+            System.out.print("An exception has been captured. What a shame, and I thought you were a good programmer\n");
             System.out.printf("Thread: %s\n", t.getId());
             System.out.printf("Exception: %s: %s\n", e.getClass().getName(), e.getMessage());
             System.out.print("Stack Trace: \n");

@@ -1,5 +1,6 @@
-package io.github.Smaltin.AvilonSubBot.Commands;
+package io.github.Smaltin.AvilonSubBot.Commands.Administration;
 
+import io.github.Smaltin.AvilonSubBot.Commands.AbstractCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;

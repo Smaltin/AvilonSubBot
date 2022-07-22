@@ -4,8 +4,6 @@
 
 Yes [jojo2357](https://github.com/jojo2357) I know it's crap.
 
-Using some basic stuff from [deeJay](https://github.com/din0s/deeJay) so I don't have to reinvent the music bot
-
 Using [lavaplayer](https://github.com/sedmelluq/lavaplayer) for playing the music
 
 ## License

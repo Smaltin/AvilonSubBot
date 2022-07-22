@@ -1,5 +1,6 @@
-package io.github.Smaltin.AvilonSubBot.Commands;
+package io.github.Smaltin.AvilonSubBot.Commands.Administration;
 
+import io.github.Smaltin.AvilonSubBot.Commands.AbstractCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
@@ -51,7 +52,7 @@ public class KickCommand extends AbstractCommand {
         String reason = split.length >= 3 ? String.join(" ", Arrays.copyOfRange(split, 3, split.length)) : null;
 
         event.getGuild()
-                .kick(target, "hi")
+                .kick(target)
                 .reason(reason)
                 .queue(
                         (__) -> event.getChannel().sendMessage("Kick was successful").queue(),
