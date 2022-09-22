@@ -41,7 +41,7 @@ public class HelpCommand extends AbstractCommand {
             UserRole REQUIRED_ROLE = command.getRequiredRole();
             if (REQUIRED_ROLE == UserRole.User //Is the user authorized to use the command? If not, don't show it
                     || ((REQUIRED_ROLE == UserRole.Admin || REQUIRED_ROLE == UserRole.BotCreator) && Utilities.isBotAdmin(msg.getAuthor())))
-                send.append("`").append(Runner.getEnv("PREFIX")).append(command.getCommand()).append(" ").append(command.getArgs() == null ? "" : command.getArgs()).append("` - ").append(command.getDescription()).append("\n");
+                send.append(":white_circle: `").append(Runner.getEnv("PREFIX")).append(command.getCommand()).append(" ").append(command.getArgs() == null ? "" : command.getArgs()).append("` - ").append(command.getDescription()).append("\n");
         }
         msg.getChannel().sendMessage(send).submit();
     }

@@ -1,5 +1,6 @@
-package io.github.Smaltin.AvilonSubBot.Commands;
+package io.github.Smaltin.AvilonSubBot.Commands.ServerSpecific;
 
+import io.github.Smaltin.AvilonSubBot.Commands.AbstractCommand;
 import io.github.Smaltin.AvilonSubBot.Configuration;
 import io.github.Smaltin.AvilonSubBot.Utilities;
 import net.dv8tion.jda.api.JDA;
@@ -37,6 +38,18 @@ public class VerifyCommand extends AbstractCommand {
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         Member author = msg.getMember();
         assert author != null;
+
+        if (Utilities.isBotAdmin(msg.getAuthor())) {
+            try {
+                if (!msg.getMentionedUsers().isEmpty()) {
+                    for (Member member : msg.getMentionedMembers()) {
+                        verifyMember(client, author, member);
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         if (!msg.getChannel().getId().equals(Configuration.VERIFY_CHANNEL_ID)) {
             return;
         }
@@ -47,16 +60,6 @@ public class VerifyCommand extends AbstractCommand {
                 verifyMember(client, author, author);
             } else { //.delete().queueAfter(delay, TimeUnit.SECONDS); TODO make it delete message after 5 or so seconds
                 msg.getChannel().sendMessage(author.getAsMention() + ", wrong password given.").queue((result) -> result.delete().queueAfter(5, TimeUnit.SECONDS), (failure) -> System.out.println("Message failed: " + Arrays.toString(failure.getStackTrace())));
-            }
-        } else if (Utilities.isBotAdmin(msg.getAuthor())) {
-            try {
-                if (!msg.getMentionedUsers().isEmpty()) {
-                    for (Member member : msg.getMentionedMembers()) {
-                        verifyMember(client, author, member);
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         }
     }

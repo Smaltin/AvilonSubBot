@@ -8,13 +8,18 @@ import io.github.Smaltin.AvilonSubBot.Commands.DebugCommand;
 import io.github.Smaltin.AvilonSubBot.Commands.Administration.KickCommand;
 import io.github.Smaltin.AvilonSubBot.Commands.Administration.ReloadCommand;
 import io.github.Smaltin.AvilonSubBot.Commands.Administration.RestartCommand;
+import io.github.Smaltin.AvilonSubBot.Commands.ServerSpecific.GetGenerationRoleCommand;
+import io.github.Smaltin.AvilonSubBot.Commands.ServerSpecific.VerifyCommand;
 import io.github.Smaltin.AvilonSubBot.MusicUtilities.MusicUtilities;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
+//import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.kodehawa.lib.imageboards.ImageBoard;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,22 +44,30 @@ import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_VOICE_STATES;
 public class Runner extends ListenerAdapter {
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
-    public static final String CODE_VERSION = "0.0.5";
+    public static final String CODE_VERSION = "0.0.7";
     public static JDA holder;
     public static String postedSubCt;
-    public static String LAUNCH_TIME;
+    public static long LAUNCH_TIME;
+
+    public static CommandListUpdateAction slashCommands;
 
     public static void main(String[] args) throws LoginException, InterruptedException, FileNotFoundException {
         MusicUtilities.musicManagers = new HashMap<>();
         MusicUtilities.playerManager = new DefaultAudioPlayerManager();
         AudioSourceManagers.registerLocalSource(MusicUtilities.playerManager);
-        LAUNCH_TIME = String.valueOf(System.currentTimeMillis());
+        LAUNCH_TIME = System.currentTimeMillis();
+        System.out.println(CODE_VERSION);
         if (args.length != 1) {
-            throw new IllegalArgumentException("You must provide ONE valid filepath for a settings file.");
-        }
-        SETTINGS_FILEPATH = args[0];
-        if (!new File(SETTINGS_FILEPATH).exists()) {
-            throw new FileNotFoundException("File doesn't exist. You must provide a valid filepath for a settings file.");
+            //throw new IllegalArgumentException("You must provide ONE valid filepath for a settings file.");
+            SETTINGS_FILEPATH = System.getProperty("user.dir") + "/settings.env";
+            if (!new File(SETTINGS_FILEPATH).exists()) {
+                throw new IllegalArgumentException("You must provide ONE valid filepath for a settings file.");
+            }
+        } else {
+            SETTINGS_FILEPATH = args[0];
+            if (!new File(SETTINGS_FILEPATH).exists()) {
+                throw new FileNotFoundException("File doesn't exist. You must provide a valid filepath for a settings file.");
+            }
         }
         while (true) {
             if (isInternetWorking()) break;
@@ -65,6 +78,7 @@ public class Runner extends ListenerAdapter {
         else System.out.println("AvilonSubBot running code v" + CODE_VERSION + " :)");
         holder = JDABuilder.createDefault(Configuration.BOTKEY, GUILD_MESSAGES, GUILD_VOICE_STATES).addEventListeners(new Runner()).build();
         holder.awaitReady();
+        slashCommands = holder.updateCommands();
         loadCommands();
         holder.getPresence().setActivity(Activity.listening(!DEVELOPER_MODE ? "Avilon's Music" : "Smaltin's sick 'grammer beats"));
         SubCountRenamer.SubCounter thread = new SubCountRenamer.SubCounter();
@@ -95,7 +109,7 @@ public class Runner extends ListenerAdapter {
      */
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, /*PlayCommand.class, SkipCommand.class*/HololivePhotoCommand.class, ReloadCommand.class, DebugCommand.class);
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, /*PlayCommand.class, SkipCommand.class*/HololivePhotoCommand.class, ReloadCommand.class, DebugCommand.class, GetGenerationRoleCommand.class);
         for (Class<? extends AbstractCommand> s : classes) { //TODO add "eject" and sus commands
             //TODO make music
             try {
@@ -157,6 +171,16 @@ public class Runner extends ListenerAdapter {
             AbstractCommand command = getCommand(message.getMessage().getContentRaw());
             if (command == null) return;
             command.runCommand(holder, message, msg);
+        }
+    }
+
+    @Override
+    public void onSlashCommand(SlashCommandEvent event) {
+        if (event.getGuild() == null) return;
+        if (getCommand(event.getName()) != null) {
+            AbstractCommand command = getCommand(event.getName());
+            if (command == null) return;
+            //command.runCommand(holder, event, event.getName());
         }
     }
 

@@ -6,8 +6,7 @@ plugins {
 }
 
 mainClassName = "io.github.Smaltin.AvilonSubBot.Runner"
-sourceCompatibility = 1.8
-
+sourceCompatibility = 17
 group 'io.github.smaltin.avilonsubbot'
 
 repositories {
