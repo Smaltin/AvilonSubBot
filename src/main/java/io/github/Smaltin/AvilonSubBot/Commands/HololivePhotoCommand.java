@@ -76,6 +76,9 @@ public class HololivePhotoCommand extends AbstractCommand {
                                 msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
                                         .flatMap(Message::delete).queue();
                             }
+                        } else {
+                            msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                    .flatMap(Message::delete).queue();
                         }
                     });
                 } catch (Exception e) {
@@ -94,6 +97,9 @@ public class HololivePhotoCommand extends AbstractCommand {
                                 msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
                                         .flatMap(Message::delete).queue();
                             }
+                        } else {
+                            msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                    .flatMap(Message::delete).queue();
                         }
                     });
                 } catch (Exception e) {
@@ -112,6 +118,9 @@ public class HololivePhotoCommand extends AbstractCommand {
                                 msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
                                         .flatMap(Message::delete).queue();
                             }
+                        } else {
+                            msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                    .flatMap(Message::delete).queue();
                         }
                     });
                 } catch (Exception e) {
@@ -123,13 +132,16 @@ public class HololivePhotoCommand extends AbstractCommand {
                 try {
                     DefaultImageBoards.KONACHAN.search(page, 100, tags).async(images -> {
                         if (images.size() >= 1) {
-                            String imageURL = images.get((int) (Math.random() * images.size())).getFile_url();
+                            String imageURL = images.get((int) (Math.random() * images.size())).getJpeg_url();
                             if (!imageURL.equals("")) {
                                 msg.reply(imageURL).mentionRepliedUser(false).queue();
                             } else {
                                 msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
                                         .flatMap(Message::delete).queue();
                             }
+                        } else {
+                            msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                    .flatMap(Message::delete).queue();
                         }
                     });
                 } catch (Exception e) {
@@ -148,6 +160,9 @@ public class HololivePhotoCommand extends AbstractCommand {
                                 msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
                                         .flatMap(Message::delete).queue();
                             }
+                        } else {
+                            msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                    .flatMap(Message::delete).queue();
                         }
                     });
                 } catch (Exception e) {
