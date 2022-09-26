@@ -4,8 +4,8 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.kodehawa.lib.imageboards.DefaultImageBoards;
-import net.kodehawa.lib.imageboards.entities.BoardImage;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import static io.github.Smaltin.AvilonSubBot.Configuration.PREFIX;
@@ -22,46 +22,138 @@ public class HololivePhotoCommand extends AbstractCommand {
 
     @Override
     public String getArgs() {
-        return "(Optional) <tag> <tag2> ...";
+        return "(Optional) <(Age Restricted Only) board> <tag> <tag2> ...";
     }
 
     @Override
     public String getDescription() {
-        return "Sends a random safebooru image tagged \"hololive.\" Optionally can add additional tags to the search.";
+        return "Sends a random booru image tagged \"hololive.\" Optionally can add additional tags to the search, and image boards can be specified in age restricted channels (g = gelbooru, r = rule34, d = danbooru, k = konachan)";
     }
 
     @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         Long time = channelRateLimit.getOrDefault(msg.getChannel().getId(), System.currentTimeMillis() - 5000);
         if (System.currentTimeMillis() <= time) {
-            msg.reply("Please wait 5 seconds between running this command. The cooldown is to prevent rate limiting.").mentionRepliedUser(false)
-                    .delay(5, SECONDS, null) // delete 5 seconds later
-                    .flatMap(Message::delete)
-                    .queue();
+            msg.reply("Please wait 5 seconds between running this command. The cooldown is to prevent rate limiting.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                    .flatMap(Message::delete).queue();
             return;
         } else {
             channelRateLimit.put(msg.getChannel().getId(), System.currentTimeMillis() + 5000);
         }
-        String tags = "hololive" + msg.getContentRaw().substring(PREFIX.length() + getCommand().length());
-        System.out.println("User " + msg.getAuthor().getAsTag() + " is searching Safebooru using tag(s) '" + tags + "'");
-        try {
-            int page = 1 + (int) (Math.random() * 1000);
-            if (tags.length() > 8) {
-                page = 1;
-            }
-            DefaultImageBoards.SAFEBOORU.search(page, 100, tags).async(images -> {
-                if (images.size() >= 1) {
-                    BoardImage image = images.get((int) (Math.random() * images.size()));
-                    msg.reply(image.getURL()).mentionRepliedUser(false).queue();
-                } else {
-                    msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false)
-                            .delay(5, SECONDS, null) // delete 5 seconds later
-                            .flatMap(Message::delete)
-                            .queue();
+
+        String commandArgs = msg.getContentRaw().substring(PREFIX.length() + getCommand().length());
+        String possibleBoard = !commandArgs.equals("") ? commandArgs.split(" ")[1] : "s";
+        String tags;
+        if (possibleBoard.length() == 1 && !possibleBoard.equalsIgnoreCase("a") && !commandArgs.equals("")) {
+            String[] split = commandArgs.split(" ");
+            tags = String.join(" ", Arrays.copyOfRange(split, 2, split.length));
+            tags = tags.length() > 0 ? " " + tags : tags;
+            possibleBoard = msg.getTextChannel().isNSFW() ? possibleBoard : "s";
+        } else {
+            possibleBoard = "s";
+            tags = commandArgs;
+        }
+        tags = "hololive" + tags;
+
+        int page = 1 + (int) (Math.random() * 100);
+        if (tags.length() > 11) {
+            page = 1;
+        }
+        searchBoard(msg, possibleBoard, tags, page);
+    }
+
+    public void searchBoard(Message msg, String board, String tags, int page) {
+        switch (board) {
+            case "g" -> {
+                System.out.println("User " + msg.getAuthor().getAsTag() + " is searching Gelbooru on page " + page + " using tag(s) '" + tags + "'");
+                try {
+                    DefaultImageBoards.GELBOORU.search(page, 100, tags).async(images -> {
+                        if (images.size() >= 1) {
+                            String imageURL = images.get((int) (Math.random() * images.size())).getFile_url();
+                            if (!imageURL.equals("")) {
+                                msg.reply(imageURL).mentionRepliedUser(false).queue();
+                            } else {
+                                msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                        .flatMap(Message::delete).queue();
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    msg.reply("New exception\n" + e).mentionRepliedUser(false).queue();
                 }
-            });
-        } catch (Exception e) {
-            msg.reply("New exception\n" + e).mentionRepliedUser(false).queue();
+            }
+            case "r" -> {
+                System.out.println("User " + msg.getAuthor().getAsTag() + " is searching R34 using tag(s) '" + tags + "'");
+                try {
+                    DefaultImageBoards.RULE34.search(page, 100, tags).async(images -> {
+                        if (images.size() >= 1) {
+                            String imageURL = images.get((int) (Math.random() * images.size())).getFile_url();
+                            if (!imageURL.equals("")) {
+                                msg.reply(imageURL).mentionRepliedUser(false).queue();
+                            } else {
+                                msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                        .flatMap(Message::delete).queue();
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    msg.reply("New exception\n" + e).mentionRepliedUser(false).queue();
+                }
+            }
+            case "d" -> {
+                System.out.println("User " + msg.getAuthor().getAsTag() + " is searching Danbooru using tag(s) '" + tags + "'");
+                try {
+                    DefaultImageBoards.DANBOORU.search(page, 100, tags).async(images -> {
+                        if (images.size() >= 1) {
+                            String imageURL = images.get((int) (Math.random() * images.size())).getFile_url();
+                            if (!imageURL.equals("")) {
+                                msg.reply(imageURL).mentionRepliedUser(false).queue();
+                            } else {
+                                msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                        .flatMap(Message::delete).queue();
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    msg.reply("New exception\n" + e).mentionRepliedUser(false).queue();
+                }
+            }
+            case "k" -> {
+                System.out.println("User " + msg.getAuthor().getAsTag() + " is searching Konachan using tag(s) '" + tags + "'");
+                try {
+                    DefaultImageBoards.KONACHAN.search(page, 100, tags).async(images -> {
+                        if (images.size() >= 1) {
+                            String imageURL = images.get((int) (Math.random() * images.size())).getFile_url();
+                            if (!imageURL.equals("")) {
+                                msg.reply(imageURL).mentionRepliedUser(false).queue();
+                            } else {
+                                msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                        .flatMap(Message::delete).queue();
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    msg.reply("New exception\n" + e).mentionRepliedUser(false).queue();
+                }
+            }
+            default -> {
+                System.out.println("User " + msg.getAuthor().getAsTag() + " is searching Safebooru using tag(s) '" + tags + "'");
+                try {
+                    DefaultImageBoards.SAFEBOORU.search(page, 100, tags).async(images -> {
+                        if (images.size() >= 1) {
+                            String imageURL = images.get((int) (Math.random() * images.size())).getFileUrl();
+                            if (!imageURL.equals("")) {
+                                msg.reply(imageURL).mentionRepliedUser(false).queue();
+                            } else {
+                                msg.reply("No images could be found. Either the server is overloaded or your tag(s) were invalid.").mentionRepliedUser(false).delay(5, SECONDS, null) // delete 5 seconds later
+                                        .flatMap(Message::delete).queue();
+                            }
+                        }
+                    });
+                } catch (Exception e) {
+                    msg.reply("New exception\n" + e).mentionRepliedUser(false).queue();
+                }
+            }
         }
     }
 }

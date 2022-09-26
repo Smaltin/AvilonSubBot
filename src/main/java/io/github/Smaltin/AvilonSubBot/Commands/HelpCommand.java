@@ -30,11 +30,10 @@ public class HelpCommand extends AbstractCommand {
 
     @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
-        StringBuilder send = new StringBuilder("Current Code Version: " + Runner.CODE_VERSION + "\nI know the following commands:\n\n");
+        StringBuilder send = new StringBuilder("I know the following commands:\n\n");
         for (int i = 0; i < Runner.commands.values().size(); i++) {
             if ((i + 1) % 11 == 0) {
                 msg.getChannel().sendMessage(send).submit();
-                //System.out.println(send);
                 send = new StringBuilder();
             }
             AbstractCommand command = (AbstractCommand) Runner.commands.values().toArray()[i];

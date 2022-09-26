@@ -44,7 +44,7 @@ import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_VOICE_STATES;
 public class Runner extends ListenerAdapter {
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
-    public static final String CODE_VERSION = "0.0.7";
+    public static final String CODE_VERSION = "0.0.8";
     public static JDA holder;
     public static String postedSubCt;
     public static long LAUNCH_TIME;
@@ -109,7 +109,7 @@ public class Runner extends ListenerAdapter {
      */
     public static void loadCommands() {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, /*PlayCommand.class, SkipCommand.class*/HololivePhotoCommand.class, ReloadCommand.class, DebugCommand.class, GetGenerationRoleCommand.class);
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, /*PlayCommand.class, SkipCommand.class*/HololivePhotoCommand.class, ReloadCommand.class, DebugCommand.class, GetGenerationRoleCommand.class, ChangelogCommand.class);
         for (Class<? extends AbstractCommand> s : classes) { //TODO add "eject" and sus commands
             //TODO make music
             try {
