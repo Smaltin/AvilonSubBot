@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Arrays;
@@ -60,5 +61,13 @@ public class BanCommand extends AbstractCommand {
                         (__) -> event.getChannel().sendMessage("Ban was successful").queue(),
                         (error) -> event.getChannel().sendMessageFormat("Could not ban %s", error.getMessage()).queue()
                 );
+    }
+
+    @Override
+    public void setupSlashCommand(JDA client) {
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
     }
 }

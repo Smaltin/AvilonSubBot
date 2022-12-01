@@ -7,7 +7,9 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -70,5 +72,34 @@ public class VerifyCommand extends AbstractCommand {
         assert general != null;
         general.sendMessage(member.getAsMention() + joinMessages[random.nextInt(joinMessages.length)]).queue((result) -> {
         }, (failure) -> System.out.println("Message failed: " + Arrays.toString(failure.getStackTrace())));
+    }
+
+    private boolean hasUnverifiedRole(Member member) {
+        return member.getRoles().contains(member.getGuild().getRoleById(Configuration.VERIFY_REMOVE_ROLE_ID));
+    }
+
+    @Override
+    public void setupSlashCommand(JDA client) {
+        Objects.requireNonNull(client.getGuildChannelById(Configuration.VERIFY_GENERAL_CHANNEL_ID)).getGuild().upsertCommand(getCommand(), getDescription()).addOption(OptionType.STRING, "password", "password provided by avilon", true).queue();
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+        Member author = event.getMember();
+        assert author != null;
+        if (hasUnverifiedRole(event.getMember())) {
+            if (event.getOption("password") != null) {
+                if (Objects.requireNonNull(event.getOption("password")).getAsString().equals(Configuration.VERIFY_PASSWORD)) {
+                    event.reply("Verifying...").setEphemeral(true).queue();
+                    verifyMember(client, author, author);
+                } else {
+                    event.reply("Incorrect password provided. You inputted: " + Objects.requireNonNull(event.getOption("password")).getAsString()).setEphemeral(true).queue();
+                }
+            } else {
+                event.reply("You must supply a password").queue();
+            }
+        } else {
+            event.reply("You are already verified.").setEphemeral(true).queue();
+        }
     }
 }

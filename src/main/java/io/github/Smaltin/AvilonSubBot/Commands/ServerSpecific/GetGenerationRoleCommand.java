@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.sql.Date;
@@ -27,6 +28,11 @@ public class GetGenerationRoleCommand extends AbstractCommand {
     }
 
     @Override
+    public void setupSlashCommand(JDA client) {
+        client.upsertCommand(getCommand(), "Attempts to give the proper generation role for Avilon's server").queue();
+    }
+
+    @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
         Member author = msg.getMember();
         assert author != null;
@@ -38,6 +44,21 @@ public class GetGenerationRoleCommand extends AbstractCommand {
         clearGenRoles(author);
         roleByGen(gen, author);
         msg.reply("You have been assigned to generation " + gen + ". This generation is based off your most recent join date. If you believe this is incorrect, inform a moderator.").queue();
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+        Member author = event.getMember();
+        assert author != null;
+        if (!Objects.requireNonNull(event.getGuild()).getId().equals("603147860225032192")) { //Pacifam only TODO make server specific number be in config
+            //TODO make help command not show server specific commands unless actually in server
+            event.reply("You are not in an eligible server for this command.").setEphemeral(true).queue();
+            return;
+        }
+        int gen = getGen(author.getTimeJoined().toEpochSecond());
+        clearGenRoles(author);
+        roleByGen(gen, author);
+        event.reply("You have been assigned to generation " + gen + ". This generation is based off your most recent join date. If you believe this is incorrect, inform a moderator.").queue();
     }
 
     private int getGen(long timeinsec) {
@@ -75,7 +96,7 @@ public class GetGenerationRoleCommand extends AbstractCommand {
     }
 
     private void clearGenRoles(Member author) {
-        long[] roles = {1019586837989294173L,1019586896487264326L,1009393869911240724L,1019586932851884062L,1019586983103840296L};
+        long[] roles = {1019586837989294173L, 1019586896487264326L, 1009393869911240724L, 1019586932851884062L, 1019586983103840296L};
         for (Role r : author.getRoles()) {
             long roleid = r.getIdLong();
             for (long role : roles) {

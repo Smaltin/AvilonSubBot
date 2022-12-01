@@ -2,6 +2,7 @@ package io.github.Smaltin.AvilonSubBot.Commands;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class SusCommand extends AbstractCommand {
@@ -39,5 +40,10 @@ public class SusCommand extends AbstractCommand {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+
     }
 }

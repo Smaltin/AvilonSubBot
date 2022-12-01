@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.PrivateChannel;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.awt.*;
@@ -35,5 +36,13 @@ public class PaciCommand extends AbstractCommand {
             Consumer<PrivateChannel> messageSender = channel -> channel.sendMessageEmbeds(builder.build()).submit();
             target.getUser().openPrivateChannel().queue(messageSender);
         }
+    }
+
+    @Override
+    public void setupSlashCommand(JDA client) {
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
     }
 }

@@ -4,7 +4,10 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
 
 import java.awt.*;
 import java.util.Random;
@@ -45,6 +48,20 @@ public class KissCommand extends AbstractCommand {
 
         builder.setImage(kissImages[random.nextInt(kissImages.length)]).setColor(Color.decode("#FF0000")).setDescription(":kissing_heart: **" + authorPing + "** kissy **" + mentionedUserPing + "** :kissing_heart:");
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
+    }
+
+    @Override
+    public void setupSlashCommand(JDA client) {
+        client.upsertCommand(getCommand(), getDescription()).addOption(OptionType.USER, "user", "Who are you kissing?", true).queue();
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+        EmbedBuilder builder = new EmbedBuilder();
+        OptionMapping argUser = event.getOption("user");
+        if (argUser != null)
+            builder.setImage(kissImages[random.nextInt(kissImages.length)]).setColor(Color.decode("#FF0000")).setDescription(":kissing_heart: **" + event.getUser().getAsMention() + "** kissy **" + argUser.getAsUser().getAsMention() + "** :kissing_heart:");
+        event.replyEmbeds(builder.build()).queue();
     }
 
     @Override

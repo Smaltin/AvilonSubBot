@@ -5,6 +5,7 @@ import io.github.Smaltin.AvilonSubBot.UserRole;
 import io.github.Smaltin.AvilonSubBot.Utilities;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class HelpCommand extends AbstractCommand {
@@ -43,5 +44,13 @@ public class HelpCommand extends AbstractCommand {
                 send.append(":white_circle: `").append(Runner.getEnv("PREFIX")).append(command.getCommand()).append(" ").append(command.getArgs() == null ? "" : command.getArgs()).append("` - ").append(command.getDescription()).append("\n");
         }
         msg.getChannel().sendMessage(send).submit();
+    }
+
+    @Override
+    public void setupSlashCommand(JDA client) {
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
     }
 }

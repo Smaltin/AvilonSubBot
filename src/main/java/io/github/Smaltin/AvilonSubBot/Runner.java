@@ -4,7 +4,6 @@ import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
 import io.github.Smaltin.AvilonSubBot.Commands.*;
 import io.github.Smaltin.AvilonSubBot.Commands.Administration.BanCommand;
-import io.github.Smaltin.AvilonSubBot.Commands.DebugCommand;
 import io.github.Smaltin.AvilonSubBot.Commands.Administration.KickCommand;
 import io.github.Smaltin.AvilonSubBot.Commands.Administration.ReloadCommand;
 import io.github.Smaltin.AvilonSubBot.Commands.Administration.RestartCommand;
@@ -19,7 +18,6 @@ import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
-//import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.kodehawa.lib.imageboards.ImageBoard;
 import org.jetbrains.annotations.Nullable;
 
@@ -44,7 +42,7 @@ import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_VOICE_STATES;
 public class Runner extends ListenerAdapter {
     public static final HashMap<String, AbstractCommand> commands = new HashMap<>();
     public static final HashMap<String, AbstractCommand> commandsAlias = new HashMap<>();
-    public static final String CODE_VERSION = "0.0.8";
+    public static final String CODE_VERSION = "0.0.10";
     public static JDA holder;
     public static String postedSubCt;
     public static long LAUNCH_TIME;
@@ -78,8 +76,8 @@ public class Runner extends ListenerAdapter {
         else System.out.println("AvilonSubBot running code v" + CODE_VERSION + " :)");
         holder = JDABuilder.createDefault(Configuration.BOTKEY, GUILD_MESSAGES, GUILD_VOICE_STATES).addEventListeners(new Runner()).build();
         holder.awaitReady();
+        loadCommands(holder);
         slashCommands = holder.updateCommands();
-        loadCommands();
         holder.getPresence().setActivity(Activity.listening(!DEVELOPER_MODE ? "Avilon's Music" : "Smaltin's sick 'grammer beats"));
         SubCountRenamer.SubCounter thread = new SubCountRenamer.SubCounter();
         thread.start();
@@ -107,9 +105,9 @@ public class Runner extends ListenerAdapter {
      *
      * @author jojo2357
      */
-    public static void loadCommands() {
+    public static void loadCommands(JDA client) {
         if (commands.keySet().size() > 0) return;
-        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, MemeCommand.class, KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, /*PlayCommand.class, SkipCommand.class*/HololivePhotoCommand.class, ReloadCommand.class, DebugCommand.class, GetGenerationRoleCommand.class, ChangelogCommand.class);
+        List<Class<? extends AbstractCommand>> classes = Arrays.asList(RestartCommand.class, CatCommand.class, VerifyCommand.class, PaciCommand.class, PatCommand.class, PingCommand.class, /*MemeCommand.class,*/ KickCommand.class, BanCommand.class, HugCommand.class, KissCommand.class, AviTimeCommand.class, HowPogCommand.class, HelpCommand.class, /*PlayCommand.class, SkipCommand.class*/HololivePhotoCommand.class, ReloadCommand.class, DebugCommand.class, GetGenerationRoleCommand.class, ChangelogCommand.class);
         for (Class<? extends AbstractCommand> s : classes) { //TODO add "eject" and sus commands
             //TODO make music
             try {
@@ -119,6 +117,7 @@ public class Runner extends ListenerAdapter {
                 AbstractCommand c = s.getConstructor().newInstance();
                 if (!commands.containsKey(c.getCommand())) {
                     commands.put(c.getCommand(), c);
+                    c.setupSlashCommand(client);
                 }
                 for (String alias : c.getAliases()) {
                     if (!commandsAlias.containsKey(alias)) {
@@ -180,7 +179,7 @@ public class Runner extends ListenerAdapter {
         if (getCommand(event.getName()) != null) {
             AbstractCommand command = getCommand(event.getName());
             if (command == null) return;
-            //command.runCommand(holder, event, event.getName());
+            command.runCommand(holder, event);
         }
     }
 

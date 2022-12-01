@@ -4,6 +4,7 @@ import io.github.Smaltin.AvilonSubBot.Commands.AbstractCommand;
 import io.github.Smaltin.AvilonSubBot.MusicUtilities.MusicUtilities;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Arrays;
@@ -36,5 +37,10 @@ public class PlayCommand extends AbstractCommand {
         if (song != null) {
             MusicUtilities.loadAndPlay(msg.getTextChannel(), song);
         }
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+
     }
 }
