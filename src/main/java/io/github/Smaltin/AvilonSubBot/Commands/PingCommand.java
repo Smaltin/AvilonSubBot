@@ -2,6 +2,7 @@ package io.github.Smaltin.AvilonSubBot.Commands;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 /**
@@ -61,5 +62,19 @@ public class PingCommand extends AbstractCommand {
             msg.getChannel().sendMessage(":outbox_tray: checking ping").queue(
                     sendMe -> sendMe.editMessage(":inbox_tray: ping is " + (System.currentTimeMillis() - start) + "ms").submit());
         }
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+        long time = System.currentTimeMillis();
+        event.reply("Pong!").setEphemeral(true) // reply or acknowledge
+                .flatMap(v ->
+                        event.getHook().editOriginalFormat("Pong: %d ms", System.currentTimeMillis() - time) // then edit original
+                ).queue(); // Queue both reply and edit
+    }
+
+    @Override
+    public void setupSlashCommand(JDA client) {
+        client.upsertCommand(getCommand(), "Checks the ping of the bot").queue();
     }
 }

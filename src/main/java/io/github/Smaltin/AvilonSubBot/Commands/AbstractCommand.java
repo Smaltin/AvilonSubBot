@@ -1,7 +1,9 @@
 package io.github.Smaltin.AvilonSubBot.Commands;
 
+import io.github.Smaltin.AvilonSubBot.UserRole;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public abstract class AbstractCommand {
@@ -12,6 +14,13 @@ public abstract class AbstractCommand {
      * @return The command name without the prefix
      */
     public abstract String getCommand();
+
+    /**
+     * Allows for a slash command to be created.
+     */
+    public void setupSlashCommand(JDA client) {
+        client.upsertCommand(getCommand(), getDescription()).queue();
+    }
 
     /**
      * The arguments the command may require
@@ -29,6 +38,8 @@ public abstract class AbstractCommand {
 
     public abstract void runCommand(JDA client, MessageReceivedEvent event, Message msg);
 
+    public abstract void runCommand(JDA client, SlashCommandEvent event);
+
     /**
      * Returns secondary names that will be accepted if the user calls this command
      *
@@ -36,5 +47,9 @@ public abstract class AbstractCommand {
      */
     public String[] getAliases() {
         return new String[0];
+    }
+
+    public UserRole getRequiredRole() {
+        return UserRole.User;
     }
 }

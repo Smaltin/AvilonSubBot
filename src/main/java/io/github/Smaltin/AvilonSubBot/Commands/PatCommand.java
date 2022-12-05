@@ -4,7 +4,10 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
 
 import java.awt.*;
 import java.util.Random;
@@ -45,5 +48,19 @@ public class PatCommand extends AbstractCommand {
 
         builder.setImage(patImages[random.nextInt(patImages.length)]).setColor(Color.decode("#FF0000")).setDescription("**" + authorPing + "** patted **" + mentionedUserPing + "**");
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
+    }
+
+    @Override
+    public void setupSlashCommand(JDA client) {
+        client.upsertCommand(getCommand(), getDescription()).addOption(OptionType.USER, "user", "Who are you patting?", true).queue();
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+        EmbedBuilder builder = new EmbedBuilder();
+        OptionMapping argUser = event.getOption("user");
+        if (argUser != null)
+            builder.setImage(patImages[random.nextInt(patImages.length)]).setColor(Color.decode("#FF0000")).setDescription("**" + event.getUser().getAsMention() + "** patted **" + argUser.getAsUser().getAsMention() + "**");
+        event.replyEmbeds(builder.build()).queue();
     }
 }

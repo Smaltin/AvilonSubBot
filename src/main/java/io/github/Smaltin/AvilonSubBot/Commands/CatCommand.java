@@ -4,6 +4,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.awt.*;
@@ -37,6 +38,16 @@ public class CatCommand extends AbstractCommand {
 
         builder.setImage(catImages[random.nextInt(catImages.length)]).setColor(Color.decode("#ffd1dc")).setDescription("Meow Meow").setTitle("Cat Machine");
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+        EmbedBuilder builder = new EmbedBuilder();
+        Member author = event.getMember();
+        assert author != null;
+
+        builder.setImage(catImages[random.nextInt(catImages.length)]).setColor(Color.decode("#ffd1dc")).setDescription("Meow Meow").setTitle("Cat Machine");
+        event.replyEmbeds(builder.build()).submit();
     }
 
     @Override

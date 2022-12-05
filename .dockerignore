@@ -1,0 +1,6 @@
+#.dockerignore
+*.env
+*.md
+!README.md
+statistics/*
+*.csv

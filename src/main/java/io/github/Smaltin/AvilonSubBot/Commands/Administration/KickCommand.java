@@ -1,10 +1,12 @@
-package io.github.Smaltin.AvilonSubBot.Commands;
+package io.github.Smaltin.AvilonSubBot.Commands.Administration;
 
+import io.github.Smaltin.AvilonSubBot.Commands.AbstractCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Arrays;
@@ -51,11 +53,19 @@ public class KickCommand extends AbstractCommand {
         String reason = split.length >= 3 ? String.join(" ", Arrays.copyOfRange(split, 3, split.length)) : null;
 
         event.getGuild()
-                .kick(target, "hi")
+                .kick(target)
                 .reason(reason)
                 .queue(
                         (__) -> event.getChannel().sendMessage("Kick was successful").queue(),
                         (error) -> event.getChannel().sendMessageFormat("Could not kick %s", error.getMessage()).queue()
                 );
+    }
+
+    @Override
+    public void setupSlashCommand(JDA client) {
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
     }
 }

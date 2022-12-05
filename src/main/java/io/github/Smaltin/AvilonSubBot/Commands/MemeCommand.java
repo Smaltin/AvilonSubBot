@@ -3,6 +3,7 @@ package io.github.Smaltin.AvilonSubBot.Commands;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.awt.*;
@@ -32,6 +33,13 @@ public class MemeCommand extends AbstractCommand {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setImage("https://api.cool-img-api.ml/meme?randomize=" + random.nextInt(99999999)).setColor(Color.decode("#ff0000"));
         msg.getChannel().sendMessageEmbeds(builder.build()).submit();
+    }
+
+    @Override
+    public void runCommand(JDA client, SlashCommandEvent event) {
+        EmbedBuilder builder = new EmbedBuilder();
+        builder.setImage("https://api.cool-img-api.ml/meme?randomize=" + random.nextInt(99999999)).setColor(Color.decode("#ff0000"));
+        event.replyEmbeds(builder.build()).submit();
     }
 
     @Override
