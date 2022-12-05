@@ -5,7 +5,17 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+
 public class SusCommand extends AbstractCommand {
+    String resourcesFolder = System.getProperty("user.dir") + "/resources";
+    String amongUsImage = resourcesFolder + "/impostor.png";
     //ImageJ ij = new ImageJ();
 
     @Override
@@ -25,25 +35,76 @@ public class SusCommand extends AbstractCommand {
 
     @Override
     public void runCommand(JDA client, MessageReceivedEvent event, Message msg) {
-        try {
-            /*
-            ImagePlus image = IJ.openImage(msg.getAuthor().getAvatarUrl());
-            ImagePlus sus = IJ.openImage("");
-            ImageStack stack = new ImageStack();
-            stack.addSlice(sus.getProcessor());
-            stack.addSlice(image.getProcessor());
-             */
-            String[] args = msg.getContentRaw().split(" ");
-            if (args.length > 0) {
+        BufferedImage amongusImg = null;
+        BufferedImage userImg = null;
 
-            }
-        } catch (Exception e) {
+        try {
+            amongusImg = ImageIO.read(new File(amongUsImage));
+        } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
+        try {
+            userImg = ImageIO.read(new URL(Objects.requireNonNullElseGet(msg.getAuthor().getAvatarUrl(), () -> msg.getAuthor().getDefaultAvatarUrl())));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (amongusImg != null && userImg != null) {
+            BufferedImage temp = new BufferedImage(
+                    amongusImg.getWidth(), amongusImg.getHeight(),
+                    BufferedImage.TYPE_INT_ARGB);
+            Graphics graphics = temp.getGraphics();
+            graphics.drawImage(userImg, 1418, 573, 941, 941, null);
+            graphics.drawImage(amongusImg, 0, 0, null);
+            graphics.dispose();
+            File f = new File(
+                    resourcesFolder + "/amongus_" + msg.getAuthor().getId() + ".png");
+            try {
+                ImageIO.write(temp, "png", f);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            msg.reply(f).mentionRepliedUser(false).queue((success) -> {
+                f.delete();
+            });
+        }
+    }
     @Override
     public void runCommand(JDA client, SlashCommandEvent event) {
+        BufferedImage amongusImg = null;
+        BufferedImage userImg = null;
 
+        try {
+            amongusImg = ImageIO.read(new File(amongUsImage));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            userImg = ImageIO.read(new URL(Objects.requireNonNullElseGet(event.getUser().getAvatarUrl(), () -> event.getUser().getDefaultAvatarUrl())));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (amongusImg != null && userImg != null) {
+            BufferedImage temp = new BufferedImage(
+                    amongusImg.getWidth(), amongusImg.getHeight(),
+                    BufferedImage.TYPE_INT_ARGB);
+            Graphics graphics = temp.getGraphics();
+            graphics.drawImage(userImg, 1418, 573, 941, 941, null);
+            graphics.drawImage(amongusImg, 0, 0, null);
+            graphics.dispose();
+            File f = new File(
+                    resourcesFolder + "/amongus_" + event.getUser().getId() + ".png");
+            try {
+                ImageIO.write(temp, "png", f);
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            event.reply("").addFile(f).queue((success) -> {
+                f.delete();
+            });
+        }
     }
 }

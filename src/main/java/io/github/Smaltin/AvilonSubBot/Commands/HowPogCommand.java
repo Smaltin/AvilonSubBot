@@ -52,7 +52,7 @@ public class HowPogCommand extends AbstractCommand {
 
     @Override
     public void setupSlashCommand(JDA client) {
-        client.upsertCommand(getCommand(), getArgs()).addOption(OptionType.STRING, "subject", "").addOption(OptionType.USER, "user", "").queue();
+        client.upsertCommand(getCommand(), getArgs()).addOption(OptionType.STRING, "subject", "the object").addOption(OptionType.USER, "user", "the person").queue();
     }
 
     @Override
