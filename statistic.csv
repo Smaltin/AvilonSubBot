@@ -22,14 +22,14 @@ PatCommand.java,66 (4.5%),55,83.3%,0,0.0%,11,16.7%
 PingCommand.java,80 (5.2%),67,83.8%,5,6.3%,8,10.0%
 GetGenerationRoleCommand.java,109 (6.6%),93,85.3%,5,4.6%,11,10.1%
 VerifyCommand.java,105 (6.0%),91,86.7%,0,0.0%,14,13.3%
-SusCommand.java,49 (2.7%),32,65.3%,8,16.3%,9,18.4%
-Configuration.java,59 (3.2%),47,79.7%,6,10.2%,6,10.2%
-AudioPlayerSendHandler.java,46 (2.4%),29,63.0%,10,21.7%,7,15.2%
-GuildMusicManager.java,36 (1.9%),15,41.7%,17,47.2%,4,11.1%
-MusicUtilities.java,95 (4.7%),69,72.6%,6,6.3%,20,21.1%
-TrackScheduler.java,56 (2.7%),29,51.8%,20,35.7%,7,12.5%
-Runner.java,200 (8.7%),153,76.5%,32,16.0%,15,7.5%
-SubCountRenamer.java,98 (4.1%),89,90.8%,0,0.0%,9,9.2%
+SusCommand.java,110 (5.9%),98,89.1%,1,0.9%,11,10.0%
+Configuration.java,59 (3.1%),47,79.7%,6,10.2%,6,10.2%
+AudioPlayerSendHandler.java,46 (2.3%),29,63.0%,10,21.7%,7,15.2%
+GuildMusicManager.java,36 (1.8%),15,41.7%,17,47.2%,4,11.1%
+MusicUtilities.java,95 (4.5%),69,72.6%,6,6.3%,20,21.1%
+TrackScheduler.java,56 (2.6%),29,51.8%,20,35.7%,7,12.5%
+Runner.java,200 (8.5%),153,76.5%,32,16.0%,15,7.5%
+SubCountRenamer.java,98 (4.0%),89,90.8%,0,0.0%,9,9.2%
 UserRole.java,5 (0.2%),4,80.0%,0,0.0%,1,20.0%
 Utilities.java,20 (0.8%),16,80.0%,0,0.0%,4,20.0%
-Total,2415,1952,0.8,139,0.1,324,0.1
+Total,2476,2018,0.8,132,0.1,326,0.1
