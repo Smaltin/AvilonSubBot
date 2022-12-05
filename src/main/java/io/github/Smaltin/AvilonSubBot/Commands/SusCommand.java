@@ -16,7 +16,6 @@ import java.util.Objects;
 public class SusCommand extends AbstractCommand {
     String resourcesFolder = System.getProperty("user.dir") + "/resources";
     String amongUsImage = resourcesFolder + "/impostor.png";
-    //ImageJ ij = new ImageJ();
 
     @Override
     public String getCommand() {
