@@ -13,7 +13,7 @@
 |[HowPogCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHowPogCommand.java)|73 (2.9%)|62|84.9%|0|0.0%|11|15.1%|
 |[PatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FPatCommand.java)|66 (2.7%)|55|83.3%|0|0.0%|11|16.7%|
 |[GetGenerationRoleCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FServerSpecific%2FGetGenerationRoleCommand.java)|109 (4.4%)|93|85.3%|5|4.6%|11|10.1%|
-|[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|110 (4.4%)|98|89.1%|1|0.9%|11|10.0%|
+|[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|109 (4.4%)|98|89.9%|0|0.0%|11|10.1%|
 |[AbstractCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAbstractCommand.java)|55 (2.2%)|22|40.0%|23|41.8%|10|18.2%|
 |[ReloadCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FReloadCommand.java)|63 (2.5%)|53|84.1%|0|0.0%|10|15.9%|
 |[MemeCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMemeCommand.java)|49 (2.0%)|39|79.6%|0|0.0%|10|20.4%|
@@ -35,4 +35,4 @@
 |[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FUtilities.java)|20 (0.8%)|16|80.0%|0|0.0%|4|20.0%|
 |[UserRole.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FUserRole.java)|5 (0.2%)|4|80.0%|0|0.0%|1|20.0%|
 |Average |75.0|61.2|X|4.0|X|9.9|X|
-|Total (33)|2476|2018|81.5%|132| 5.3%|326|13.2%|
+|Total (33)|2475|2018|81.5%|131| 5.3%|326|13.2%|

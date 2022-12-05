@@ -12,7 +12,6 @@
 |[PingCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FPingCommand.java)|80 (3.2%)|67|83.8%|5|6.3%|8|10.0%|
 |[GetGenerationRoleCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FServerSpecific%2FGetGenerationRoleCommand.java)|109 (4.4%)|93|85.3%|5|4.6%|11|10.1%|
 |[ChangelogCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FChangelogCommand.java)|75 (3.0%)|64|85.3%|2|2.7%|9|12.0%|
-|[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|110 (4.4%)|98|89.1%|1|0.9%|11|10.0%|
 |[BanCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FBanCommand.java)|73 (2.9%)|58|79.5%|0|0.0%|15|20.5%|
 |[KickCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FKickCommand.java)|71 (2.9%)|58|81.7%|0|0.0%|13|18.3%|
 |[ReloadCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FReloadCommand.java)|63 (2.5%)|53|84.1%|0|0.0%|10|15.9%|
@@ -31,8 +30,9 @@
 |[PaciCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FPaciCommand.java)|48 (1.9%)|40|83.3%|0|0.0%|8|16.7%|
 |[PatCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FPatCommand.java)|66 (2.7%)|55|83.3%|0|0.0%|11|16.7%|
 |[VerifyCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FServerSpecific%2FVerifyCommand.java)|105 (4.2%)|91|86.7%|0|0.0%|14|13.3%|
+|[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|109 (4.4%)|98|89.9%|0|0.0%|11|10.1%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FSubCountRenamer.java)|98 (4.0%)|89|90.8%|0|0.0%|9|9.2%|
 |[UserRole.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FUserRole.java)|5 (0.2%)|4|80.0%|0|0.0%|1|20.0%|
 |[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FUtilities.java)|20 (0.8%)|16|80.0%|0|0.0%|4|20.0%|
 |Average |75.0|61.2|X|4.0|X|9.9|X|
-|Total (33)|2476|2018|81.5%|132| 5.3%|326|13.2%|
+|Total (33)|2475|2018|81.5%|131| 5.3%|326|13.2%|

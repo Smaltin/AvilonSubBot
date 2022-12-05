@@ -31,8 +31,8 @@
 |[HelpCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHelpCommand.java)|56 (2.3%)|48|85.7%|0|0.0%|8|14.3%|
 |[VerifyCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FServerSpecific%2FVerifyCommand.java)|105 (4.2%)|91|86.7%|0|0.0%|14|13.3%|
 |[DebugCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FDebugCommand.java)|71 (2.9%)|63|88.7%|0|0.0%|8|11.3%|
-|[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|110 (4.4%)|98|89.1%|1|0.9%|11|10.0%|
+|[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|109 (4.4%)|98|89.9%|0|0.0%|11|10.1%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FSubCountRenamer.java)|98 (4.0%)|89|90.8%|0|0.0%|9|9.2%|
 |[HololivePhotoCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FHololivePhotoCommand.java)|313 (12.6%)|295|94.2%|0|0.0%|18|5.8%|
 |Average |75.0|61.2|X|4.0|X|9.9|X|
-|Total (33)|2476|2018|81.5%|132| 5.3%|326|13.2%|
+|Total (33)|2475|2018|81.5%|131| 5.3%|326|13.2%|
