@@ -26,7 +26,7 @@
 |[QueueCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FQueueCommand.java)|39 (1.6%)|30|76.9%|0|0.0%|9|23.1%|
 |[ReloadCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FReloadCommand.java)|63 (2.5%)|53|84.1%|0|0.0%|10|15.9%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FRestartCommand.java)|72 (2.9%)|58|80.6%|5|6.9%|9|12.5%|
-|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|200 (8.1%)|153|76.5%|32|16.0%|15|7.5%|
+|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|201 (8.1%)|154|76.6%|32|15.9%|15|7.5%|
 |[SkipCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FSkipCommand.java)|35 (1.4%)|28|80.0%|0|0.0%|7|20.0%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FSubCountRenamer.java)|98 (4.0%)|89|90.8%|0|0.0%|9|9.2%|
 |[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|109 (4.4%)|98|89.9%|0|0.0%|11|10.1%|
@@ -35,4 +35,4 @@
 |[Utilities.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FUtilities.java)|20 (0.8%)|16|80.0%|0|0.0%|4|20.0%|
 |[VerifyCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FServerSpecific%2FVerifyCommand.java)|105 (4.2%)|91|86.7%|0|0.0%|14|13.3%|
 |Average |75.0|61.2|X|4.0|X|9.9|X|
-|Total (33)|2475|2018|81.5%|131| 5.3%|326|13.2%|
+|Total (33)|2476|2019|81.5%|131| 5.3%|326|13.2%|

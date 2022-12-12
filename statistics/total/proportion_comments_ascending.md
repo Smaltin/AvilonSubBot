@@ -29,10 +29,10 @@
 |[MusicUtilities.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FMusicUtilities.java)|95 (3.8%)|69|72.6%|6|6.3%|20|21.1%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FRestartCommand.java)|72 (2.9%)|58|80.6%|5|6.9%|9|12.5%|
 |[Configuration.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FConfiguration.java)|59 (2.4%)|47|79.7%|6|10.2%|6|10.2%|
-|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|200 (8.1%)|153|76.5%|32|16.0%|15|7.5%|
+|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|201 (8.1%)|154|76.6%|32|15.9%|15|7.5%|
 |[AudioPlayerSendHandler.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FAudioPlayerSendHandler.java)|46 (1.9%)|29|63.0%|10|21.7%|7|15.2%|
 |[TrackScheduler.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FTrackScheduler.java)|56 (2.3%)|29|51.8%|20|35.7%|7|12.5%|
 |[AbstractCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAbstractCommand.java)|55 (2.2%)|22|40.0%|23|41.8%|10|18.2%|
 |[GuildMusicManager.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FGuildMusicManager.java)|36 (1.5%)|15|41.7%|17|47.2%|4|11.1%|
 |Average |75.0|61.2|X|4.0|X|9.9|X|
-|Total (33)|2475|2018|81.5%|131| 5.3%|326|13.2%|
+|Total (33)|2476|2019|81.5%|131| 5.3%|326|13.2%|

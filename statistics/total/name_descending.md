@@ -8,7 +8,7 @@
 |[SusCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FSusCommand.java)|109 (4.4%)|98|89.9%|0|0.0%|11|10.1%|
 |[SubCountRenamer.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FSubCountRenamer.java)|98 (4.0%)|89|90.8%|0|0.0%|9|9.2%|
 |[SkipCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FSkipCommand.java)|35 (1.4%)|28|80.0%|0|0.0%|7|20.0%|
-|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|200 (8.1%)|153|76.5%|32|16.0%|15|7.5%|
+|[Runner.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FRunner.java)|201 (8.1%)|154|76.6%|32|15.9%|15|7.5%|
 |[RestartCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FRestartCommand.java)|72 (2.9%)|58|80.6%|5|6.9%|9|12.5%|
 |[ReloadCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAdministration%2FReloadCommand.java)|63 (2.5%)|53|84.1%|0|0.0%|10|15.9%|
 |[QueueCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FMusic%2FQueueCommand.java)|39 (1.6%)|30|76.9%|0|0.0%|9|23.1%|
@@ -35,4 +35,4 @@
 |[AudioPlayerSendHandler.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FMusicUtilities%2FAudioPlayerSendHandler.java)|46 (1.9%)|29|63.0%|10|21.7%|7|15.2%|
 |[AbstractCommand.java](https://github.com/Smaltin/AvilonSubBot/tree/development/src%2Fmain%2Fjava%2Fio%2Fgithub%2FSmaltin%2FAvilonSubBot%2FCommands%2FAbstractCommand.java)|55 (2.2%)|22|40.0%|23|41.8%|10|18.2%|
 |Average |75.0|61.2|X|4.0|X|9.9|X|
-|Total (33)|2475|2018|81.5%|131| 5.3%|326|13.2%|
+|Total (33)|2476|2019|81.5%|131| 5.3%|326|13.2%|
