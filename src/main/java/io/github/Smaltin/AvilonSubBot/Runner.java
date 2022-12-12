@@ -24,6 +24,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.security.auth.login.LoginException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 import java.net.URL;
@@ -95,7 +96,7 @@ public class Runner extends ListenerAdapter {
             URLConnection connection = url.openConnection();
             connection.connect();
             return true;
-        } catch (Exception e) {
+        } catch (IOException e) {
             return false;
         }
     }
@@ -142,7 +143,7 @@ public class Runner extends ListenerAdapter {
             Properties loadProps = new Properties();
             loadProps.load(Files.newInputStream(Paths.get(SETTINGS_FILEPATH)));
             return loadProps.getProperty(key);
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
             return "No, you're bad.";
         }
