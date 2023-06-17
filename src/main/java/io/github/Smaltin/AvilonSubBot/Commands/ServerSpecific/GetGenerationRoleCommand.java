@@ -71,11 +71,12 @@ public class GetGenerationRoleCommand extends AbstractCommand {
             return 2;
         } else if (timeinms < Date.valueOf("2022-06-30").getTime()) {
             return 3;
-        /*} else if (timeinms < Date.valueOf("2022-09-30").getTime()) {
-            //return 4;
-         */
-        } else {
+        } else if (timeinms < Date.valueOf("2022-09-30").getTime()) {
             return 4;
+        } else if (timeinms < Date.valueOf("2023-06-15").getTime()) {
+            return 5;
+        } else {
+            return 6;
         }
     }
 
@@ -86,6 +87,8 @@ public class GetGenerationRoleCommand extends AbstractCommand {
             case 2 -> 1009393869911240724L;
             case 3 -> 1019586932851884062L;
             case 4 -> 1019586983103840296L;
+            case 5 -> 1020011083941023837L;
+            case 6 -> 1119627567096406149L;
             default -> 0L;
         };
         if (roleid != 0L) {
@@ -96,7 +99,7 @@ public class GetGenerationRoleCommand extends AbstractCommand {
     }
 
     private void clearGenRoles(Member author) {
-        long[] roles = {1019586837989294173L, 1019586896487264326L, 1009393869911240724L, 1019586932851884062L, 1019586983103840296L};
+        long[] roles = {1019586837989294173L, 1019586896487264326L, 1009393869911240724L, 1019586932851884062L, 1019586983103840296L, 1020011083941023837L, 1119627567096406149L};
         for (Role r : author.getRoles()) {
             long roleid = r.getIdLong();
             for (long role : roles) {
